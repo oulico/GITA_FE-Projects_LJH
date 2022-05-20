@@ -3,21 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <title>GITA FE 2022 LJH 과제물 모음</title>
     <style>
+      html,
+      body,
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        width: 100%;
+      }
+      header {
+        background-color: rgb(28, 64, 74);
+      }
+      h1 {
+        padding: 36px 0 12px 1em;
+        font-size: 32px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        color: turquoise;
+      }
+      ol{
+        margin: 40px 40px 40px 40px  ;
+      }
+      li{
+        color: whitesmoke;
+        line-height: 4;
+      }
       a {
+        font-size: 24px;
+        padding: 10px;
         text-decoration: none;
+        color: whitesmoke;
+      }
+      .card{
+        background-color: #514c4c;
+        width: 50%;
+        height: 600px;
+        box-shadow: 4px 4px 55px turquoise;
+        border-radius: 10px;
+       margin: 90px auto;  
+        position: relative;
+      }
+      body {
+        background-color: rgb(53, 48, 48);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .fixed {
+        position: absolute;
+        bottom: 60px;
+        right: 50px;
+      }
+      .btn {
+        background-color: transparent;
+        color: whitesmoke
       }
     </style>
   </head>
+  <header>
+    <h1>Webpages Collection</h1>
+  </header>
   <body>
-    <ol>
+    <div class="card">
+
+      <ol>
       <li><a href="./01.hiddenMenu/index.html">히든메뉴</a></li>
       <li></li>
       <li></li>
       <li></li>
       <li></li>
     </ol>
+    <a class="fixed" href="https://github.com/oulico"><button class="btn">깃헙 놀러가기</button></a>
   </body>
 </html>
