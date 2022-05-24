@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -14,9 +15,14 @@
       }
       html {
         width: 100%;
+        height: 100%
       }
       header {
         background-color: rgb(28, 64, 74);
+      }
+      title {
+        color: rgba(4, 125, 131, 0.8);
+        text-shadow: 1px 4px 4px #666;
       }
       h1 {
         padding: 36px 0 12px 1em;
@@ -59,13 +65,20 @@
         right: 50px;
       }
       .btn {
-        background-color: transparent;
-        color: whitesmoke
+        background-color: mediumaquamarine;
+        color: whitesmoke;
+        text-align: center;
+        width: 160px;
+        height: 50px;
+        box-shadow: 6px 6px 10px rgba(31, 31, 31, 0.933);
+        border-radius: 25px;
+        line-height: 50px;
+        font-size: 24px; 
       }
     </style>
   </head>
   <header>
-    <a href="#"><h1>Webpages Collection</h1></a>
+    <a href="#"><h1 class="title">Webpages Collection</h1></a>
   </header>
   <body>
     <div class="card">
@@ -77,6 +90,6 @@
       <li></li>
       <li></li>
     </ol>
-    <a class="fixed" href="https://github.com/oulico"><button class="btn">깃헙 놀러가기</button></a>
+    <a class="fixed" href="https://github.com/oulico"><div class="btn">Go to GitHub</div></a>
   </body>
 </html>

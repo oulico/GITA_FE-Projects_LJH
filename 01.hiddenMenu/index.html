@@ -2,18 +2,98 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>Museum</title>
+    <title>Hidden Menu - CNN Travel</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <div class="header__menu-fixed"></div>
-      <div class="header__menu-scroll"></div>
+      <div class="nav-fixed">
+        <div class="nav-fixed__left">
+          <img src="assets/img/ttl_logo.png" alt="CNN" />
+          <img src="assets/img/ttl_trv.png" alt="Travel" />
+        </div>
+        <div class="nav-fixed__right">
+          <img src="assets/img/faceb.png" alt="Facebook" />
+          <img src="assets/img/email.png" alt="Email" />
+          <img src="assets/img/twt.png" alt="Twitter" />
+          <div class="nav-fixed__search">
+            <a href="#"><img src="assets/img/search.png" alt="Search" /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-scroll">
+        <div class="nav-scroll__btn btn-left">HOME</div>
+        <div class="nav-scroll__btn btn-right">
+          <div class="nav-scroll__btn">BLOG |</div>
+          <div class="nav-scroll__btn">ABOUT US |</div>
+          <div class="nav-scroll__btn">CONTACT</div>
+        </div>
+      </div>
     </header>
 
     <main>
-      <button class="main__btn-fixed">티켓을 사세요</button>
+      <section class="section__title-bg"></section>
+      <div class="section__title-text">
+        <h3>LIFE, BUT BETTER - FOOD</h3>
+        <h1>The world's 50 best foods</h1>
+      </div>
+
+      <section class="section__body">
+        <div class="art" id="art1">
+          <h2>Thailand</h2>
+          <figure>
+            <img src="assets/img/art1.jpg" alt="Curry" />
+          </figure>
+        </div>
+        <div class="art" id="art2">
+          <div>
+            <h2>Italy</h2>
+            <figure><img src="assets/img/art2.jpg" alt="Pizza" /></figure>
+          </div>
+        </div>
+        <div class="art" id="art3">
+          <div>
+            <h2>India</h2>
+            <figure><img src="assets/img/art3.jpg" alt="Crab" /></figure>
+          </div>
+        </div>
+        <div class="art" id="art4">
+          <div>
+            <h2>Belgium</h2>
+            <figure><img src="assets/img/art4_choco.jpg" alt="" /></figure>
+          </div>
+        </div>
+        <div class="art" id="art5">
+          <div>
+            <h2>Spain</h2>
+            <figure><img src="assets/img/art5_paella.jpg" alt="" /></figure>
+          </div>
+        </div>
+        <div class="art" id="art6">
+          <div>
+            <h2>Portugal</h2>
+            <figure><img src="assets/img/art6_eggtart.jpg" alt="" /></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Floating Button -->
+      <!-- <a href="#"
+        ><div class="btn fixed"><h3>티켓을 사세요</h3></div></a
+      > -->
     </main>
 
-    <footer></footer>
+    <footer>
+      <div class="ftl"><h5>2022 CNN Travel</h5></div>
+      <div class="ftr">
+        <a href="#">
+          <h5>Legal Terms</h5>
+        </a>
+        <a href="#">
+          <h5>Cookies</h5>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>

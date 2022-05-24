@@ -1,0 +1,113 @@
+html,
+body,
+a,
+h1,
+h2,
+h3,
+h5,
+div {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+  /* outline: 1px dotted blue; */
+}
+header,
+main,
+footer {
+  border-bottom: 1px solid black;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.art h2 {
+  font-size: 100px;
+  display: inline-block;
+  vertical-align: 23px;
+}
+.art figure {
+  display: inline-block;
+}
+
+.nav-fixed {
+  line-height: 65px;
+  /* line-height를 적용해 줘야만 vertical-align: middle을 쓸 수 있다 */
+}
+
+.nav-fixed img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.nav-fixed__left {
+  display: inline-block;
+}
+
+.nav-fixed__right {
+  float: right;
+}
+
+.nav-fixed__search {
+  float: right;
+}
+
+.nav-scroll {
+  padding: 10px 5px;
+}
+
+.nav-scroll__btn {
+  display: inline;
+}
+
+.section__title-bg {
+  filter: blur(2px);
+  background: url(assets/img/art3.jpg) no-repeat 0 / cover;
+  /* 색이반고윙크 */
+  height: 30vh;
+  position: relative;
+}
+.section__title-text {
+  position: absolute;
+  top: 200px;
+}
+
+.section__title-text h1,
+.section__title-text h3 {
+  color: white;
+  text-shadow: 1px 1px 3px rgb(38, 38, 38);
+}
+
+.section__body figure img {
+  width: 200px;
+}
+
+.btn-right {
+  float: right;
+}
+
+.btn a {
+  color: aliceblue;
+}
+
+.btn {
+  text-align: center;
+  line-height: 40px;
+  width: 120px;
+  height: 40px;
+  background-image: linear-gradient(to bottom, #ddd, #555);
+  border-radius: 10px;
+}
+
+footer > div {
+  display: inline-block;
+  padding: 10px;
+}
+.ftr {
+  float: right;
+}
+
+.ftr > a {
+  display: inline-block;
+}
