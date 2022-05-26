@@ -22,6 +22,12 @@ h1 {
   font-size: 50px;
 }
 
+header,
+.section__body {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
 .art h2 {
   font-size: 100px;
   display: inline-block;
