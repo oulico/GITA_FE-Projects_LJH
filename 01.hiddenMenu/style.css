@@ -1,5 +1,7 @@
 /* * {
   outline: 1px dotted red;
+  //공사중표시
+
 } */
 
 html,
@@ -16,8 +18,7 @@ div {
   color: black;
   /* outline: 1px dotted blue; */
 }
-body {
-}
+
 header,
 footer {
   border-bottom: 1px solid black;
@@ -126,15 +127,24 @@ header,
 }
 
 .desc {
+  height: 0;
   width: 1140px;
-  height: 630px;
   overflow-y: scroll;
   margin: 0 auto;
-  display: none;
+  transition: height 0.3s ease-out;
+}
+.nobar {
+  line-height: 1.2;
 }
 
-.desc:hover {
-  content: "";
+.nobar:hover h2 {
+  border-bottom: 3px solid black;
+}
+.nobar:hover .desc {
+  margin-top: 10px;
+  width: 1140px;
+  height: 630px;
+  transition: height 0.3s ease-in;
 }
 
 .desc p {
@@ -195,3 +205,14 @@ footer > div {
 .ftr > a {
   display: inline-block;
 }
+
+/******************************
+    [미디어쿼리]
+*****************************/
+
+/* 1180 미디어쿼리 시작 */
+
+@media screen {
+}
+
+/* 1180 미디어쿼리 끝 */
