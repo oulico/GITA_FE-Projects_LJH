@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px dotted red;
-}
+} */
 
 html,
 body,
@@ -45,6 +45,10 @@ header,
   display: inline-block;
 }
 
+.nav-scroll__btn:hover {
+  border-bottom: 3px solid black;
+}
+
 .nav-fixed {
   top: 0;
   line-height: 65px;
@@ -74,8 +78,13 @@ header,
 }
 
 .nav-scroll {
+  position: fixed;
   margin-top: 65px;
   padding: 10px 5px;
+  z-index: 998;
+  background: white;
+  width: 1200px;
+  box-sizing: border-box;
 }
 
 .nav-scroll__btn {
@@ -93,22 +102,25 @@ header,
   filter: blur(5px);
 }
 .section__title-text {
+  padding: 30px;
   top: 200px;
-  margin: 0 auto;
   width: 1200px;
   height: 300px;
   position: absolute;
-  background-color: #555;
-  display: block;
-  margin: 0 auto;
+  background-color: rgba(156, 156, 156, 0.487);
+  border-radius: 10px;
+  left: 20vw;
 }
 
 .section__title-text h1,
 .section__title-text h3 {
   color: white;
   text-shadow: 1px 1px 3px rgb(38, 38, 38);
+  margin-bottom: 40px;
 }
-
+.section__body {
+  position: relative;
+}
 .section__body figure img {
   width: 311px;
 }
@@ -118,6 +130,11 @@ header,
   height: 630px;
   overflow-y: scroll;
   margin: 0 auto;
+  display: none;
+}
+
+.desc:hover {
+  content: "";
 }
 
 .desc p {
@@ -134,18 +151,35 @@ header,
   float: right;
 }
 
-.btn a {
-  color: aliceblue;
+.btn {
+  margin: 0 auto;
+  display: inline-block;
+  position: fixed;
+  left: 100px;
+  bottom: 100px;
 }
 
-.btn {
+.btn > h3 {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  text-shadow: 1px 0 #bbb, 0 1px #bbb, -1px 0 #bbb, 0 -1px #bbb;
+  line-height: 24px;
+  margin-top: 12px;
+}
+
+.btn.fixed {
   text-align: center;
-  line-height: 40px;
-  width: 120px;
-  height: 40px;
-  background-image: linear-gradient(to bottom, #ddd, #555);
+  width: 140px;
+  height: 50px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(219, 217, 217) 10%,
+    rgb(234, 234, 234) 50%,
+    rgb(149, 148, 148)
+  );
   border-radius: 10px;
 }
+
 footer {
   margin: 0 auto;
   max-width: 1200px;
