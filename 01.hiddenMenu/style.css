@@ -84,7 +84,7 @@ header,
   padding: 10px 5px;
   z-index: 998;
   background: white;
-  width: 1200px;
+  width: min(1200px, 100%);
   box-sizing: border-box;
 }
 
@@ -104,13 +104,12 @@ header,
 }
 .section__title-text {
   padding: 30px;
-  top: 200px;
-  width: 1200px;
+  top: 143px;
+  width: 100vw;
   height: 300px;
   position: absolute;
   background-color: rgba(156, 156, 156, 0.487);
   border-radius: 10px;
-  left: 20vw;
 }
 
 .section__title-text h1,
@@ -165,8 +164,8 @@ header,
   margin: 0 auto;
   display: inline-block;
   position: fixed;
-  left: 100px;
-  bottom: 100px;
+  left: 9vw;
+  bottom: 4vh;
 }
 
 .btn > h3 {
@@ -212,7 +211,44 @@ footer > div {
 
 /* 1180 미디어쿼리 시작 */
 
-@media screen {
+@media screen and (max-width: 1180px) {
+  .section__body figure img {
+    width: 90vw;
+  }
+  iframe {
+    display: none;
+  }
+  main {
+    width: 100vw;
+  }
+  figure > img {
+    width: 80vw;
+  }
+  h2 {
+    font-size: 10vh;
+  }
+  .desc {
+    height: auto;
+    width: 90vw;
+    overflow: hidden;
+  }
+  .nobar:hover .desc {
+    margin-top: 0px;
+    width: 90vw;
+    height: auto;
+    transition: height 0s ease-in;
+  }
+  .nobar:hover h2 {
+    border-bottom: 0px solid black;
+  }
 }
 
 /* 1180 미디어쿼리 끝 */
+/* 800 미디어쿼리 시작 */
+
+@media screen and (max-width: 800px) {
+  body .art h2 {
+    font-size: 10vh;
+  }
+}
+/* 800 미디어쿼리 끝 */
