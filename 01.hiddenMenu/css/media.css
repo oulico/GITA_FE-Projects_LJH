@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* 미디어쿼리 1080 시작*/
+@media screen and (max-width: 1080px) {
+  .cont__card__img {
+    width: 80vw;
+    background: no-repeat center/cover;
+    position: absolute;
+    filter: blur(4px);
+  }
+  body .cont__card__name {
+    font-size: 10rem !important;
+    color: #cc0000;
+    text-shadow: 0.1rem 0 #fff, 0 0.1rem #fff, -0.1rem 0 #fff, 0 -0.1rem #fff;
+    position: absolute;
+    z-index: 4;
+  }
+  .cont__desc {
+    height: 100vh !important;
+  }
+  .cont__desc__vid {
+    display: none;
+  }
+  .cont__desc__artcl,
+  .cont__desc__artcl > p {
+    width: 90vw !important;
+  }
+
+  nav.gnb {
+    z-index: 9;
+  }
+  li.on {
+    width: 0 !important;
+  }
+
+  li.on::before {
+    content: "Search";
+    color: white;
+    font-size: 7vh;
+    text-align: center;
+    line-height: 100vh;
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 65px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999999;
+  }
+  li.on > input {
+    display: block;
+    position: absolute;
+    z-index: 999999999;
+    top: 50vh;
+    left: 25vw;
+    width: 50vw;
+  }
+}
+
+/* 미디어쿼리 1080 끝*/
+/* 미디어쿼리 820 시작*/
+/* 미디어쿼리 820 끝*/

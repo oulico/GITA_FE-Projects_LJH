@@ -1,0 +1,153 @@
+/* 메인 페이지 CSS */
+
+/* 외부 CSS */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+@import url(./core.css);
+@import url(./media.css);
+
+/**********************
+메인
+**********************/
+
+/* 오버레이 */
+
+/* body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: welcomeCover 0.1s 5.8s forwards;
+}
+
+@keyframes welcomeCover {
+  to {
+    height: 0;
+  }
+} */
+
+.cont {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  margin-top: var(--nav-height);
+  align-items: center;
+}
+
+.cont__card {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.cont__card__name {
+  margin: 0 40px 0;
+}
+.c1 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art1.jpg) center / cover;
+}
+
+.c1 > .cont__card__name {
+  font-size: 200px;
+}
+.c2 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art2.jpg) center / cover;
+}
+
+.c2 > .cont__card__name {
+  font-size: 200px;
+}
+.c3 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art3.jpg) center / cover;
+}
+
+.c3 > .cont__card__name {
+  font-size: 200px;
+}
+.c4 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art4_choco.jpg) center / cover;
+}
+
+.c4 > .cont__card__name {
+  font-size: 200px;
+}
+.c4 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art4_choco.jpg) center / cover;
+}
+
+.c5 > .cont__card__name {
+  font-size: 200px;
+}
+.c5 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art5_paella.jpg) center / cover;
+}
+
+.c6 > .cont__card__name {
+  font-size: 200px;
+}
+.c6 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art6_eggtart.jpg) center / cover;
+}
+
+/* 슬라이딩 설명 */
+
+.cont__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  height: 0px;
+  width: min(720px, 100vw);
+  transition: height 0.2s ease-in-out;
+}
+.cont__desc.on {
+  height: 471px;
+}
+.cont__desc__vid {
+  width: 690px;
+  height: 472px;
+}
+
+.cont__desc__artcl p {
+  font-size: 24px;
+  font-weight: 200;
+  width: 690px;
+
+  text-align: justify;
+}
+
+.cont__desc__artcl > p::first-letter {
+  font-size: 36px;
+  font-weight: 400;
+}

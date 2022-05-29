@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/* contact css */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+@import url(./core.css);
+@import url(./media.css);
+
+.cont {
+  height: 100vh;
+}
+
+/* 도깨비 서브 페이지 CSS - login.css */
+
+/* 공통 사용 외부 css 파일 합치기(merging) */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+
+/* 컨텐츠 영역 겉박스 */
+#cont {
+  background-color: #ddd;
+}
+.cont {
+  padding: 15px !important;
+  /* 800px이하 미디어 쿼리보다 우선적용위해 !important 사용해서 최우선적용함! */
+  min-height: 600px;
+}
+
+.stit {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 50px;
+  padding: 40px 0 20px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.scont {
+  max-width: 700px;
+  /* min-height: 247px; */
+  /* max-height: 100vh; */
+  margin: 30vh auto 30vh;
+  border: 2px solid #737373;
+  border-radius: 18px;
+  box-sizing: border-box;
+  padding: 45px 59px;
+  position: relative;
+  background-color: #fff;
+}
+
+/* 입력창 공통라벨 */
+.minput label {
+  font-size: 20px;
+  font-weight: bold;
+
+  color: #222;
+  display: inline-block;
+  width: 115px;
+  text-align: center;
+  line-height: 36px;
+  /* outline: 2px solid red; */
+}
+
+/* 입력양식 공통 */
+.minput input {
+  width: 320px;
+  /* input은 인라인 블록이어서 width 속성이 적용된다. */
+  height: 36px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  font-size: 18px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  color: red;
+}
+/* 비밀번호 박스 */
+.scont div:nth-child(2) {
+  margin-top: 16px;
+}
+
+/* 포커스 안생기게 하기 */
+/* 모든 브라우저에 기본 포커스 아웃라인 셋팅됨. */
+input:focus {
+  outline: none;
+}
+/* 
+버튼 영역  */
+
+.btnbx {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+}
+/* submit 버튼  */
+#sbtn {
+  width: 113px;
+  height: 92px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  /* 그라데이션 배경이미지에서 셋팅 linerat-gradient(방향, 색1, 색1, ...) */
+  background-image: linear-gradient(to bottom, #ddd, #555);
+  color: white;
+  text-shadow: 1px 1px #555;
+}
+/* 기타 체크 링크 박스  */
+.addbx {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 16px;
+}
+/*체크 박스 영역  */
+.addbx span {
+  margin: 0 15px;
+  color: #555;
+}
+
+/* 체크 박스 라벨과 세로 정렬 */
+.addbx input {
+  vertical-align: -2px;
+}
+.addbx a {
+  margin: 0 15px;
+  color: #222;
+  text-decoration: none;
+}
+/* 미디어 쿼리 */
+/* 추가 링크 영역바 */
+.bar {
+  font-weight: normal;
+}
+/*  모바일용 바(.bar1) 줄바꿈(.brk)숨기기 */
+.bar1,
+.brk {
+  display: none;
+}
+/*  미디어 쿼리 690px 이하 시작 */
+@media screen and (max-width: 690px) {
+  .minput label {
+    display: block;
+    width: auto;
+  }
+  .minput input {
+    width: 100%;
+  }
+  .btnbx {
+    position: static;
+  }
+  /* submit 버튼  */
+  #sbtn {
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+  } /* 추가 링크 박스 */
+  .addbx {
+    line-height: 2.5;
+  }
+  /* 추가링크 바 숨기기  */
+  .bar2 {
+    display: none;
+  }
+  /* 추가링크 바, 줄바꿈 보이기  */
+  .bar1,
+  .brk {
+    display: inline;
+  }
+}
+/*  미디어 쿼리 690px 이하 끝 */

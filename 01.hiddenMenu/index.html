@@ -2,69 +2,97 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>Hidden Menu - CNN Travel</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Travel - World best 5 food</title>
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body>
-    <header>
-      <div class="nav-fixed">
-        <div class="nav-fixed__left">
-          <img src="assets/img/ttl_logo.png" alt="CNN" />
-          <img src="assets/img/ttl_trv.png" alt="Travel" />
-        </div>
-        <div class="nav-fixed__right">
-          <img src="assets/img/faceb.png" alt="Facebook" />
-          <img src="assets/img/email.png" alt="Email" />
-          <img src="assets/img/twt.png" alt="Twitter" />
-          <div class="nav-fixed__search">
-            <a href="#"><img src="assets/img/search.png" alt="Search" /></a>
-          </div>
-        </div>
-      </div>
 
-      <div class="nav-scroll">
-        <a href="#">
-          <div class="nav-scroll__btn btn-left">HOME</div>
-        </a>
-        <div class="btn-right">
-          <a href="#">
-            <div class="nav-scroll__btn">BLOG</div>
+  <!-- 
+  [ 명명원칙 ]
+  1. 이중 박스
+  2. 시맨틱 내용과 가장 근접하게 내용삽입. (div안에 시맨틱)
+  3. 하위 구조는 상위 구조의 이름을 상속해서 명명한다. (.top .top__menu)
+
+
+ -->
+  <!-- 바디 시작 -->
+  <body class="scbar">
+    <!-- 헤더 -->
+    <div id="top">
+      <header class="top ibx">
+        <div class="top__title">
+          <a href="./index.html">
+            <div class="title">
+              <img src="./img/ttl_logo.png" alt="CNN" />
+              <img src="./img/ttl_trv.png" alt="Travel" />
+            </div>
           </a>
-          |
-          <a href="#">
-            <div class="nav-scroll__btn">ABOUT US</div>
-          </a>
-          |
-          <a href="#">
-            <div class="nav-scroll__btn">CONTACT</div>
-          </a>
+          <!-- 스프라이트를 활용한 sns 이미지  -->
+          <aside>
+            <ol class="sns">
+              <li>
+                <a href="#"> <span class="ir">트위터 바로가기</span></a>
+              </li>
+              <li>
+                <a href="#"> <span class="ir">인스타그램 바로가기</span></a>
+              </li>
+              <li>
+                <a href="#"> <span class="ir">페이스북 바로가기</span></a>
+              </li>
+              <li onclick="search()">
+                <span class="ir">검색</span>
+              </li>
+              <li>
+                <input type="text" placeholder="Search.." />
+              </li>
+            </ol>
+          </aside>
         </div>
-      </div>
-    </header>
 
-    <main>
-      <section class="section__title-bg"></section>
-      <div class="section__title-text">
-        <h3>LIFE, BUT BETTER - FOOD</h3>
-        <h1>The world's 10 best foods</h1>
-      </div>
+        <nav class="gnb">
+          <ul>
+            <li class="menu-1">
+              <a href="./index.html">HOME</a>
+            </li>
+            <li class="menu-2">
+              <a href="">ABOUT</a>
+            </li>
+            <li class="menu-3">
+              <a href="#">BLOG</a>
+              <div class="menu-3__smenu">
+                <ol>
+                  <li><a href="#">Foods</a></li>
+                  <li><a href="#">Activities</a></li>
+                  <li><a href="#">People</a></li>
+                </ol>
+              </div>
+            </li>
+            <li class="menu-4">
+              <a href="./contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
 
-      <section class="section__body">
-        <div class="art nobar" id="art1" onmouseover="slideDown(id)">
-          <h2>Thailand</h2>
-          <figure>
-            <img src="assets/img/art1.jpg" alt="Curry" />
-          </figure>
-          <div class="desc">
+    <div id="cont">
+      <main class="cont ibx">
+        <div class="cont__card c1" onclick="slideDown(`c1`)">
+          <div class="cont__card__img"></div>
+          <div class="cont__card__name">Thailand</div>
+        </div>
+        <div class="cont__desc c1">
+          <div class="cont__desc__vid">
             <iframe
-              width="1120"
-              height="630"
+              width="690"
+              height="472"
               src="https://www.youtube.com/embed/PFlmVW9Ljwg"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
+          </div>
+          <div class="cont__desc__artcl">
             <p>
               Emphatically the king of curries, and perhaps the king of all
               foods. Spicy, coconutty, sweet and savory. Even the packet sauce
@@ -77,21 +105,22 @@
             </p>
           </div>
         </div>
-
-        <div class="art nobar" id="art2">
-          <div>
-            <h2>Italy</h2>
-            <figure><img src="assets/img/art2.jpg" alt="Pizza" /></figure>
-          </div>
-          <div class="desc">
+        <div class="cont__card c2" onclick="slideDown(`c2`)">
+          <div class="cont__card__name">Italy</div>
+          <div class="cont__card__img"></div>
+        </div>
+        <div class="cont__desc c2">
+          <div class="cont__desc__vid">
             <iframe
-              width="1120"
-              height="630"
+              width="690"
+              height="472"
               src="https://www.youtube.com/embed/1-SJGQ2HLp8"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
+          </div>
+          <div class="cont__desc__artcl">
             <p>
               Spare us the lumpy chain monstrosities and "everything-on-it"
               wheels of greed. The best pizza was and still is the simple
@@ -106,21 +135,22 @@
             </p>
           </div>
         </div>
-
-        <div class="art nobar" id="art3">
-          <div>
-            <h2>India</h2>
-            <figure><img src="assets/img/art3.jpg" alt="Crab" /></figure>
-          </div>
-          <div class="desc">
+        <div class="cont__card c3" onclick="slideDown(`c3`)">
+          <div class="cont__card__img"></div>
+          <div class="cont__card__name">India</div>
+        </div>
+        <div class="cont__desc c3">
+          <div class="cont__desc__vid">
             <iframe
-              width="1120"
-              height="630"
+              width="690"
+              height="472"
               src="https://www.youtube.com/embed/IgUCK3ekoug"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
+          </div>
+          <div class="cont__desc__artcl">
             <p>
               This one claims no roots in Chinese, Continental or Indian
               cuisines. It comes from Butter Land, an imaginary best foods
@@ -133,21 +163,22 @@
             </p>
           </div>
         </div>
-
-        <div class="art nobar" id="art4">
-          <div>
-            <h2>Mexico</h2>
-            <figure><img src="assets/img/art4_choco.jpg" alt="" /></figure>
-          </div>
-          <div class="desc">
+        <div class="cont__card c4" onclick="slideDown(`c4`)">
+          <div class="cont__card__name">Mexico</div>
+          <div class="cont__card__img"></div>
+        </div>
+        <div class="cont__desc c4">
+          <div class="cont__desc__vid">
             <iframe
-              width="1120"
-              height="630"
+              width="690"
+              height="472"
               src="https://www.youtube.com/embed/ylGlns2jvxg"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
+          </div>
+          <div class="cont__desc__artcl">
             <p>
               The Mayans drank it, Lasse Hallström made a film about it and the
               rest of us get over the guilt of eating too much of it by eating
@@ -159,21 +190,22 @@
             </p>
           </div>
         </div>
-
-        <div class="art nobar" id="art5">
-          <div>
-            <h2>Spain</h2>
-            <figure><img src="assets/img/art5_paella.jpg" alt="" /></figure>
-          </div>
-          <div class="desc">
+        <div class="cont__card c5" onclick="slideDown(`c5`)">
+          <div class="cont__card__img"></div>
+          <div class="cont__card__name">Spain</div>
+        </div>
+        <div class="cont__desc c5">
+          <div class="cont__desc__vid">
             <iframe
-              width="1120"
-              height="630"
+              width="690"
+              height="472"
               src="https://www.youtube.com/embed/L_dDUw_QuDU"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
+          </div>
+          <div class="cont__desc__artcl">
             <p>
               The sea is lapping just by your feet, a warm breeze whips the
               tablecloth around your legs and a steamy pan of paella sits in
@@ -184,21 +216,22 @@
             </p>
           </div>
         </div>
-
-        <div class="art nobar" id="art6">
-          <div>
-            <h2>Portugal</h2>
-            <figure><img src="assets/img/art6_eggtart.jpg" alt="" /></figure>
-          </div>
-          <div class="desc">
+        <div class="cont__card c6" onclick="slideDown(`c6`)">
+          <div class="cont__card__name">Portugal</div>
+          <div class="cont__card__img"></div>
+        </div>
+        <div class="cont__desc c6">
+          <div class="cont__desc__vid">
             <iframe
-              width="1120"
-              height="630"
+              width="690"
+              height="472"
               src="https://www.youtube.com/embed/J1K8_SYe0Cg"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
+          </div>
+          <div class="cont__desc__artcl">
             <p>
               Pastel de natas are perhaps the world's tastiest laundry
               byproduct. Legend has it that Portuguese nuns and monks, having
@@ -208,24 +241,23 @@
             </p>
           </div>
         </div>
-      </section>
+      </main>
+    </div>
 
-      <!-- Floating Button -->
-      <a href="#"
-        ><div class="btn fixed"><h3>구독하기</h3></div></a
-      >
-    </main>
-
-    <footer>
-      <div class="ftl"><h5>2022 CNN Travel</h5></div>
-      <div class="ftr">
-        <a href="#">
-          <h5>Legal Terms</h5>
-        </a>
-        <a href="#">
-          <h5>Cookies</h5>
-        </a>
-      </div>
-    </footer>
+    <div id="info">
+      <footer class="info ibx">
+        <div class="info__blink">
+          <ul class="clb">
+            <li><a href="#">&copy; CNN Travel 2022</a></li>
+            <li><a href="#">Legal Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="info__credit">
+          <address></address>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
