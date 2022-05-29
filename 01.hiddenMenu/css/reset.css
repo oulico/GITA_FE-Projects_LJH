@@ -39,6 +39,6 @@ a {
 }
 
 /* 구현중 공사중 외곽선 표시  */
-body * {
+/* body * {
   outline: 1px dashed mediumspringgreen;
-}
+} */
