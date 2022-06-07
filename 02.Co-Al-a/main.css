@@ -1,0 +1,93 @@
+@charset "uft-8";
+
+/* 화면 크기 */
+body {
+  height: 100vh;
+}
+
+#top,
+#bottom,
+#cont {
+  width: 100vw;
+  position: relative;
+}
+
+.cont {
+}
+
+/*  공통 속성 */
+.inbox {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* top */
+
+.top h2,
+.top h6 {
+  display: inline-block;
+}
+.top h6 {
+  margin-left: 5px;
+}
+.top {
+  background-color: black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.top_title {
+  color: white;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.top_btn {
+  color: aqua;
+  line-height: 1.5;
+  vertical-align: middle;
+  float: right;
+}
+
+.question {
+  clear: both;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.question h1 {
+  text-align: center;
+}
+.question_form * {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+/* section */
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+section .btns {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: linear-gradient(circle red white);
+}
+
+section .btn-red {
+  background-color: red;
+}
+
+section .btn-blue {
+  background-color: blue;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+}
