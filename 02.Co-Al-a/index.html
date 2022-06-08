@@ -3,95 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="script.js"></script>
     <title>Document</title>
-
   </head>
   <body>
     <div id="top">
       <header class="top inbox">
-
         <a href="#">
           <div class="top_title">
-            <h2 >Co-Al-a</h2><h6>함께 가는 즐거움</h6>
+            <h2>Co-Al</h2>
+            <h6>속전속결 막차 뜰 때까지만 달리는 앱</h6>
           </div>
         </a>
         <div class="top_btn btn"><h2 class="top_btn">리셋</h2></div>
-
-        </div>
       </header>
     </div>
 
-
     <div id="cont">
       <main class="cont inbox">
+        <div class="question title">
+          <h2>당신의 주량은?</h2>
+        </div>
 
-  
-          <div class="question"><h2>당신의 주량은?</h1></div>
-  
+        <div class="question-form">
+          <form action="calcul.js" method="post" name="capacity-form">
+            <h3>A</h3>
+            <select name="amountA" id="amountA">
+              <option value="0.5">0.5병</option>
+              <option value="1">1병</option>
+              <option value="1.5">1.5병</option>
+              <option value="2">2병</option>
+              <option value="2.5">2.5병</option>
+              <option value="3">3병</option>
+              <option value="3.5">3.5병</option>
+              <option value="4">4병</option>
+              <option value="4.5">4.5병</option>
+              <option value="5">5병</option>
+              <option value="그 이상">그 이상</option>
+            </select>
 
-  <div class="question_form">
-           <form action="calcul.js" method="post" name="capacity-form">
-    <h3>A</h3>
-             <select name="capacityA">
-               <option value="0.5">0.5병</option>
-               <option value="1">1병</option>
-               <option value="1.5">1.5병</option>
-               <option value="2">2병</option>
-               <option value="2.5">2.5병</option>
-               <option value="3">3병</option>
-               <option value="3.5">3.5병</option>
-               <option value="4">4병</option>
-               <option value="4.5">4.5병</option>
-               <option value="5">5병</option>
-               <option value="그 이상">그 이상</option>
-               </select>
-  
-               <h3>B</h3>
-             <select name="capacityB">
-               <option value="0.5">0.5병</option>
-               <option value="1">1병</option>
-               <option value="1.5">1.5병</option>
-               <option value="2">2병</option>
-               <option value="2.5">2.5병</option>
-               <option value="3">3병</option>
-               <option value="3.5">3.5병</option>
-               <option value="4">4병</option>
-               <option value="4.5">4.5병</option>
-               <option value="5">5병</option>
-               <option value="그 이상">그 이상</option>
-               </select>
-               <input type="submit" name="submit" id="submit" value="시작">
-           </form>
+            <h3>B</h3>
+            <select name="amountB" id="amountB">
+              <option value="0.5">0.5병</option>
+              <option value="1">1병</option>
+              <option value="1.5">1.5병</option>
+              <option value="2">2병</option>
+              <option value="2.5">2.5병</option>
+              <option value="3">3병</option>
+              <option value="3.5">3.5병</option>
+              <option value="4">4병</option>
+              <option value="4.5">4.5병</option>
+              <option value="5">5병</option>
+              <option value="그 이상">그 이상</option>
+            </select>
+            <div class="question title">
+              <h2>막차까지 남은 시간은?</h2>
+            </div>
+            <input
+              type="text"
+              placeholder="남은 시간을 입력하세요"
+              name="timeLast"
+              id="timeLast"
+            />
+            <button type="button" onclick="getValueInput()">Go!!</button>
+          </form>
 
-           <section>
-             <div class="btns btn-A btn-red">
-
-             </div>
-             <div class="btns btn-A btn-blue">
-
-             </div>
-             <div class="btns btn-B btn-red">
-
-             </div>
-             <div class="btns btn-B btn-blue">
-
-             </div>
-           </section>
-  </div>
-
-
+          <section>
+            <div class="btns btn-A btn-red"></div>
+            <div class="btns btn-A btn-blue"></div>
+            <div class="btns btn-B btn-red"></div>
+            <div class="btns btn-B btn-blue"></div>
+          </section>
+        </div>
       </main>
     </div>
 
-
-
     <div id="bottom">
-      <footer class="bottom inbox"><a href="author.html">&copy;Oulico</a></footer>
+      <footer class="bottom inbox">
+        <a href="author.html">&copy;Oulico</a>
+      </footer>
     </div>
-
-
   </body>
 </html>
