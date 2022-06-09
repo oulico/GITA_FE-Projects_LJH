@@ -3,6 +3,7 @@
 /* 화면 크기 */
 body {
   height: 100vh;
+  overflow: hidden;
 }
 
 #top,
@@ -10,9 +11,6 @@ body {
 #cont {
   width: 100vw;
   position: relative;
-}
-
-.cont {
 }
 
 /*  공통 속성 */
@@ -34,6 +32,10 @@ body {
   background-color: black;
   padding: 10px;
   box-sizing: border-box;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  box-shadow: 0 0 20px rgb(21, 21, 21);
 }
 .top_title {
   color: white;
@@ -46,26 +48,81 @@ body {
   line-height: 1.5;
   vertical-align: middle;
   float: right;
+  cursor: pointer;
+}
+
+.title {
+  width: 80vw;
+}
+.title:nth-of-type(2) {
+  margin-top: 40px;
 }
 
 .question {
+  margin: 30px 30px 10px;
+  border: solid black 1px;
+  border-radius: 20px;
   clear: both;
   display: flex;
   justify-content: center;
   margin-top: 20px;
+
+  background-color: #fff;
 }
 .question h1 {
   text-align: center;
 }
-.question_form * {
+
+.question-form {
+  margin-top: 40px;
+}
+.question-form * {
   display: flex;
+  flex-direction: column;
+
   justify-content: space-around;
   margin-top: 5px;
   margin-bottom: 5px;
   align-items: center;
 }
+.capacity-form {
+  justify-content: space-around;
+}
+.capacity-form > select,
+.capacity-form > input,
+.capacity-form > h3 {
+  margin: 0 auto;
+}
+/* 메뉴 */
+
+.page1 {
+  background-image: linear-gradient(to bottom, white, wheat);
+  width: 100%;
+  top: 55px;
+  height: 87vh;
+  position: fixed;
+  z-index: 1;
+  border-radius: 0 0 30px 30px;
+  box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%),
+    0.3em 0.3em 1em rgb(0 0 0 / 30%);
+  overflow: hidden;
+  transition: height 0.9s ease-in-out;
+}
+
+.page1.on {
+  height: 0;
+}
 
 /* section */
+main.cont.inbox {
+  position: relative;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 56px;
+}
 
 section {
   display: flex;
@@ -75,21 +132,95 @@ section {
 }
 
 section .btns {
-  width: 100px;
-  height: 100px;
+  width: 50vw;
+  height: 50vw;
   border-radius: 50%;
   background-image: linear-gradient(circle red white);
 }
 
+section .btn-A {
+}
+section .btn-B {
+}
+
 section .btn-red {
-  background-color: red;
+  background-image: radial-gradient(circle at center, white, red);
 }
 
 section .btn-blue {
-  background-color: blue;
+  background-image: radial-gradient(circle at center, white, green);
 }
+/* 이미지 겹치기 */
 
 footer {
   position: fixed;
   bottom: 0px;
+}
+
+/* 가상요소로 설명 */
+
+.overlay {
+  padding-top: 163px;
+  padding-bottom: 200px;
+  position: fixed;
+  z-index: 0;
+  text-align: center;
+  line-height: 6;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.739);
+  height: 100vh;
+  width: 100vw;
+  transition: height 1s ease-in-out;
+  overflow: hidden;
+  top: 0;
+}
+
+.overlay.on {
+  height: 0;
+  top: -100%;
+}
+
+/******************** 버튼 애니메이션 ***************************/
+/*기본박스*/
+.trans10 {
+  width: 50vw;
+  height: 50vw;
+}
+/* 2개의 이미지를 겹치게한다 */
+
+.trans10 div {
+  position: absolute;
+  /*위치값을 주지않으면 젠틀 앱솔루트! 싸고 있는 박스에 그대로 위치한다.*/
+  /*width: 100%;*/
+  /*%크기 값을 주면 부모찾아 삼만리-> 부모 없으니까 보이는 화면이 부모가 됨
+          그러니 절대적인 값을 주는게 낫다*/
+}
+
+/* 1. 초록버튼 처음상태(돌아옴) */
+/* Y축 0도로 돌아옴 - 0.4초 기다림 */
+.trans10 div:last-child {
+  transform: rotateY(0deg);
+  transition: transform 0.4s ease-out 0.4s;
+}
+
+/* 2. 초록버튼 오버, on상태 */
+/* Y축 90도회전 - 회전후 안보임*/
+.trans10.on div:last-child {
+  transform: rotateY(90deg);
+  transition: transform 0.4s ease-in;
+}
+
+/* 3. 빨간버튼 처음상태(돌아옴) */
+/* 처음에 이미 Y축 90도 회전상태 - 안보임 */
+.trans10 div:first-child {
+  transform: rotateY(90deg);
+  transition: transform 0.4s ease-in;
+}
+
+/* 4. 빨간 버튼 오버, on상태 */
+/* Y축 0도로 회전 - 초록 0.4초 돌동안 기다렸가 0.4초돌기 */
+.trans10.on div:first-child {
+  transform: rotateY(0deg);
+  transition: transform 0.4s ease-out 0.4s;
+  /* ease-out 정속도를 받아 끝날 때 느려진다 */
 }
