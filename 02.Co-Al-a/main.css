@@ -224,3 +224,21 @@ footer {
   transition: transform 0.4s ease-out 0.4s;
   /* ease-out 정속도를 받아 끝날 때 느려진다 */
 }
+
+/**************************************************************/
+
+@media screen and (min-width: 500px) {
+  main::after {
+    position: absolute;
+    z-index: 9997;
+    color: white;
+    text-align: center;
+    line-height: 40;
+    content: "이 사이트는 모바일 환경에서만 작동합니다. 화면을 줄여주세요";
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(96, 184, 222);
+  }
+}
