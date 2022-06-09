@@ -1,0 +1,52 @@
+/* 메인 페이지 CSS */
+
+/* 외부 CSS */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+@import url(./core.css);
+@import url(./media.css);
+
+/**********************
+메인
+**********************/
+
+/* 오버레이 */
+
+/* body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: welcomeCover 0.1s 5.8s forwards;
+}
+
+@keyframes welcomeCover {
+  to {
+    height: 0;
+  }
+} */
+
+.cont {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  margin-top: var(--nav-height);
+  align-items: center;
+  height: 100vh;
+  /* 높이값은 임시로 지정해둔 것임 추후 메인 패아자애 콘텐츠 채우고 삭제요망 */
+}
+.vidBox {
+  position: relative;
+  width: 1156px;
+}
+
+video {
+  height: 65vh;
+  width: 100%;
+  object-fit: cover;
+}
