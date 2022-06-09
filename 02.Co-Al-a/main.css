@@ -143,11 +143,6 @@ section .btns {
   background-image: linear-gradient(circle red white);
 }
 
-section .btn-A {
-}
-section .btn-B {
-}
-
 section .btn-red {
   background-image: radial-gradient(circle at center, white, red);
 }
