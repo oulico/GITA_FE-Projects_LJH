@@ -38,7 +38,7 @@
   margin-top: var(--nav-height);
   align-items: center;
   height: 100vh;
-  /* 높이값은 임시로 지정해둔 것임 추후 메인 패아자애 콘텐츠 채우고 삭제요망 */
+  /* 높이값은 임시로 지정해둔 것임 추후 메인 페이지에 콘텐츠 채우고 삭제요망 */
 }
 .vidBox {
   position: relative;
