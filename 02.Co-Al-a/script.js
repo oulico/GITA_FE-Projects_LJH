@@ -84,6 +84,8 @@ const removeOnOL = () => {
   tg.classList.add("on");
 };
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   console.log("로딩완료");
 });
+
+/////// 질문: window.addEventListener("load",{}=>{}) -> 이게 이 페이지에서 필요한가? 이 펑션 블록 안에 상단의 코드들을 집어넣으면, 클릭시에 getValueInput()이 작동을 하지 않는다. 로딩 구역이 필요한 상황과 필요하지 않은 상황을 구분을 못하겠다. 궁금합니다!
