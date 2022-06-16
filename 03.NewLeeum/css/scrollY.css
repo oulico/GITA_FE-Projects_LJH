@@ -1,0 +1,35 @@
+.cont__artContainer {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.cont__artContainer__column-wText__imgBox:nth-child(1) {
+  height: 100vh;
+  width: 600px;
+  background: url(/03.NewLeeum/img/art6_eggtart.jpg) no-repeat 0 / cover;
+}
+
+#slide {
+  display: flex;
+  justify-content: flex-start;
+  height: 80vh;
+  background-color: black;
+}
+
+.intro div {
+  display: block;
+  width: 400px;
+  height: 900px;
+}
+
+#slide li {
+  display: flex;
+  flex-direction: column;
+}
+
+#slide img {
+  margin: 20px;
+}
+#slide h2 {
+  color: white;
+}

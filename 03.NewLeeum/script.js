@@ -10,6 +10,7 @@ let lastScrollY = window.scrollY;
 
 window.addEventListener("scroll", () => {
   if (lastScrollY < window.scrollY) {
+    console.log(lastScrollY);
     console.log("we are going down");
     gnb.classList.add("nav--hidden");
   } else {

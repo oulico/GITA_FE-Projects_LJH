@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Travel - World best 5 food</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/scrollY.css" />
+  </head>
+
+  <!-- 
+  [ 명명원칙 ]
+  1. 이중 박스
+  2. 시맨틱 내용과 가장 근접하게 내용삽입. (div안에 시맨틱)
+  3. 하위 구조는 상위 구조의 이름을 상속해서 명명한다. (.top .top__menu)
+
+
+ -->
+  <!-- 바디 시작 -->
+  <body class="scbar">
+    <!-- 헤더 -->
+    <div id="top">
+      <header class="top ibx">
+        <div class="top__title">
+          <a href="./index.html">
+            <div class="title">
+              <img src="assets/leeumLogo.png" alt="LEEUM" />
+            </div>
+          </a>
+          <!-- 스프라이트를 활용한 sns 이미지  -->
+          <aside>
+            <ol class="sns">
+              <li>
+                <a href="#"> <span class="ir">트위터 바로가기</span></a>
+              </li>
+              <li>
+                <a href="#"> <span class="ir">인스타그램 바로가기</span></a>
+              </li>
+              <li>
+                <a href="#"> <span class="ir">페이스북 바로가기</span></a>
+              </li>
+              <li onclick="search()">
+                <span class="ir">검색</span>
+              </li>
+              <li>
+                <input type="text" placeholder="Search.." />
+              </li>
+            </ol>
+          </aside>
+        </div>
+
+        <nav class="gnb">
+          <ul>
+            <li class="menu-1">
+              <a href="./index.html">HOME</a>
+            </li>
+            <li class="menu-2">
+              <a href="">전시</a>
+            </li>
+            <li class="menu-3">
+              <a href="#">소장품</a>
+              <div class="menu-3__smenu">
+                <ol>
+                  <li><a href="#">Foods</a></li>
+                  <li><a href="#">Activities</a></li>
+                  <li><a href="#">People</a></li>
+                </ol>
+              </div>
+            </li>
+            <li class="menu-4">
+              <a href="#">프로그램</a>
+            </li>
+            <li class="menu-5">
+              <a href="">공간</a>
+            </li>
+            <li class="menu-2">
+              <a href="">작가</a>
+            </li>
+            <li class="menu-2">
+              <a href="">멤버스</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div id="cont">
+      <main class="cont ibx">
+        <section class="gallery">
+          <ol id="slide">
+            <li class="intro">
+              <div class="description"><h2>구본창 작품</h2></div>
+            </li>
+            <li>
+              <img src="img/leeum_art1.jpeg" alt="작품" style="width: 400px" />
+            </li>
+            <li>
+              <img src="img/leeum_art1.jpeg" alt="작품" style="width: 400px" />
+            </li>
+            <li>
+              <img src="img/leeum_art1.jpeg" alt="작품" style="width: 400px" />
+            </li>
+            <li>
+              <img src="img/leeum_art1.jpeg" alt="작품" style="width: 400px" />
+            </li>
+            <li>
+              <img src="img/leeum_art1.jpeg" alt="작품" style="width: 400px" />
+            </li>
+            <li>
+              <img src="img/leeum_art1.jpeg" alt="작품" style="width: 400px" />
+            </li>
+            <li>
+              <img src="img/leeum_art1.jpeg" alt="작품" style="width: 400px" />
+            </li>
+          </ol>
+        </section>
+      </main>
+    </div>
+
+    <div id="info">
+      <footer class="info ibx">
+        <div class="info__blink">
+          <ul class="clb">
+            <li><a href="#">&copy; Leeum</a></li>
+            <li><a href="#">Legal Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="info__credit">
+          <address></address>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
