@@ -73,6 +73,7 @@
 .top__title__autoSlide {
   width: 120px;
   overflow: hidden;
+  position: relative;
 }
 .top__title__autoSlide > ol {
   display: flex;
@@ -85,8 +86,8 @@
 .top__title__autoSlide > button:nth-of-type(1) {
   border: 1px solid gray;
   position: absolute;
-  top: 65px;
-  right: 437px;
+  top: 80px;
+  right: 30px;
   line-height: 10px;
   border-radius: 50% 0 0 50%;
   background: rgb(255, 80, 1);
@@ -96,8 +97,8 @@
 .top__title__autoSlide > button:nth-of-type(2) {
   border: 1px solid gray;
   position: absolute;
-  top: 65px;
-  right: 422px;
+  top: 80px;
+  right: 17px;
   line-height: 10px;
   border-radius: 0 50% 50% 0;
   background: rgb(255, 80, 1);
@@ -184,6 +185,9 @@
 
 /* slide */
 
+.slide {
+  position: relative;
+}
 .slide > ul {
   position: relative;
   margin: 0;
@@ -199,7 +203,6 @@
 /* 슬라이드 롤링 버튼 */
 
 .slide > button {
-  position: absolute;
   width: 30px;
   height: 30px;
   background-color: rgba(0, 0, 0, 0.292);
@@ -208,22 +211,25 @@
 }
 
 .slide > button:nth-of-type(1) {
-  bottom: 99px;
-  right: 600px;
+  position: absolute;
+  bottom: 5%;
+  right: 50%;
   line-height: 20px;
   text-align: center;
   cursor: pointer;
 }
 .slide > button:nth-of-type(2) {
-  bottom: 99px;
-  right: 550px;
+  position: absolute;
+  bottom: 5%;
+  right: 45%;
   line-height: 20px;
   text-align: center;
   cursor: pointer;
 }
 .slide > button:nth-of-type(3) {
-  bottom: 99px;
-  right: 500px;
+  position: absolute;
+  bottom: 5%;
+  right: 40%;
   line-height: 20px;
   text-align: center;
   cursor: pointer;
