@@ -163,6 +163,7 @@
 }
 
 .top__gnb button {
+  position: relative;
   display: inline-block;
   color: gray;
   height: 50px;
@@ -196,8 +197,9 @@
 }
 
 .slide > ul > li > img {
-  object-position: -720px;
-  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 슬라이드 롤링 버튼 */
@@ -256,8 +258,8 @@
   width: 185px;
   position: absolute;
   z-index: 100;
-  top: 0;
-  left: 129px;
+  top: 50px;
+  left: 0;
 }
 
 .sidebar > ul > li {
