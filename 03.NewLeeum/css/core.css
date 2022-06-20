@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* 웹폰트 */
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Oswald:wght@200;400;700&display=swap");
 
 /*
 타이틀
@@ -101,9 +101,9 @@ li.on {
   position: fixed;
   top: 0;
   height: 65px;
-  width: min(1200px, 100%);
-  background-color: white;
-  z-index: 999;
+  width: 100%;
+  z-index: 999999;
+  background-color: rgb(249, 250, 243);
 }
 
 body {
@@ -112,16 +112,18 @@ body {
 }
 /* tmzm */
 nav {
-  background-color: white;
+  background-color: rgb(249, 250, 243);
   height: var(--nav-height);
   position: fixed;
   top: 65px;
   transition: transform 0.2s ease-in-out;
-  width: min(1200px, 100%);
+  width: 100%;
 }
 
 nav.gnb {
   border-bottom: 2px solid;
+  box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.412);
+  z-index: 999998;
 }
 
 .nav--hidden {
