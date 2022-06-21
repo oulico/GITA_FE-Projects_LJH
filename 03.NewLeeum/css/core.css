@@ -103,7 +103,7 @@ li.on {
   height: 65px;
   width: 100%;
   z-index: 999999;
-  background-color: rgb(249, 250, 243);
+  background-color: rgb(243, 243, 243);
 }
 
 body {
@@ -112,7 +112,7 @@ body {
 }
 /* tmzm */
 nav {
-  background-color: rgb(249, 250, 243);
+  background-color: rgb(243, 243, 243);
   height: var(--nav-height);
   position: fixed;
   top: 65px;
