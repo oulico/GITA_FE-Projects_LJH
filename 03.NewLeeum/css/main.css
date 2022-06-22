@@ -120,9 +120,9 @@ video {
   object-fit: cover;
 }
 
-body * {
+/* body * {
   outline: red 1px solid;
-}
+} */
 
 section h1 {
   font-family: "Oswald", sans-serif;
@@ -182,7 +182,7 @@ section h1 {
   transform: translate(-50%, -50%);
   /* parent:section-2__vidBox */
   z-index: 999;
-  cursor: pointer;
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png), pointer;
 }
 
 .section-2__intro {
@@ -230,8 +230,11 @@ section h1 {
   height: 200px;
   margin-top: 10px;
   margin-bottom: 20px;
-  cursor: pointer;
 }
+
+/* .cont__card:hover * {
+  cursor: url(../img/svg/128px-Speaker_Icon.svg.png);
+} */
 
 .cont__card__name {
   margin: 0 40px 0;
@@ -242,9 +245,13 @@ section h1 {
   font-size: 148px;
 }
 
-.cont__card__name:hover {
+.cont__card:hover > .cont__card__name {
   border-bottom: 2px solid black;
 }
+.section-4__body:hover * {
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png), pointer;
+}
+
 .c1 > .cont__card__img {
   width: 400px;
   height: 200px;
@@ -347,6 +354,10 @@ section h1 {
   background: rgb(29, 29, 29);
   z-index: -9;
 } */
+
+.section-5:hover * {
+  cursor: url(../img/svg/64px-Icon_Information.svg.png), pointer;
+}
 .section-5 {
   box-sizing: border-box;
   color: rgb(243, 243, 243);
@@ -355,6 +366,7 @@ section h1 {
   padding-left: calc((100% - 1200px) / 2);
   overflow-x: scroll;
   background: rgb(29, 29, 29);
+  margin-bottom: 130px;
 }
 .section-5_bg {
   margin-top: 30px;
@@ -390,8 +402,104 @@ section h1 {
   vertical-align: bottom;
 }
 
-/* ************* footer *********8 */
+.section-6 {
+  margin-bottom: 160px;
+}
+.fbx {
+  width: 100%;
+  overflow: hidden;
+  height: 45vh;
+  position: relative;
+}
+.fbx:hover * {
+  cursor: url(../img/svg/64px-Speaker_Icon.svg.png), crosshair;
+}
+
+.tbx {
+  position: absolute;
+  height: 15vh;
+  white-space: nowrap;
+  margin-bottom: 50px;
+}
+.tbx.slideLeft {
+  width: 4522px;
+  top: 5px;
+  animation: txtFlow1 10s linear infinite;
+}
+.tbx.slideRight {
+  width: 3573px;
+  bottom: 5px;
+  animation: txtFlow2 10s linear infinite;
+}
+/* 글자 흐르기 키프레임 */
+@keyframes txtFlow1 {
+  from {
+    left: 0;
+  }
+  to {
+    left: -2261px;
+  }
+}
+/* 키프레임 */
+@keyframes txtFlow2 {
+  from {
+    left: calc(-3573px / 2);
+  }
+  to {
+    left: 0;
+  }
+}
+
+/* section 7 *******************/
+.section-7 {
+  height: calc(100% - 80px);
+  position: relative;
+}
+.section-7__body {
+  top: 50%;
+  position: absolute;
+  /* height: 90vh; */
+  width: 520px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.section-7__body h3 {
+  text-align: justify;
+}
+
+.section-7__body ul li {
+  position: absolute;
+}
+.section-7__body ul li:nth-of-type(1) {
+  top: -100%;
+  width: 300px;
+  height: 200px;
+  background: url(../img/sample_45.png) no-repeat 0 / cover;
+}
+.section-7__body ul li:nth-of-type(2) {
+  top: -100%;
+  left: -100%;
+  width: 300px;
+  height: 200px;
+  background: url(../img/sample_47.png) no-repeat 0 / cover;
+}
+.section-7__body ul li:nth-of-type(3) {
+  width: 300px;
+  height: 200px;
+  background: url(../img/sample_49.png) no-repeat 0 / cover;
+}
+.section-7__body ul li:nth-of-type(4) {
+  background-image: url(../img/M1_ex2.jpeg);
+}
+.section-7__body ul li:nth-of-type(5) {
+  background-image: url(../img/M2_ex2.jpeg);
+}
+.section-7__body ul li:nth-of-type(6) {
+  background-image: url(../img/M3_ex2.jpeg);
+}
+/* ************* footer **********/
 
 footer {
-  display: none;
+  /* display: none; */
 }
