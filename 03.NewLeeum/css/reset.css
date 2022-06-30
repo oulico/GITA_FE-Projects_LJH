@@ -16,6 +16,11 @@ ol {
   margin: 0;
   padding: 0;
 }
+/* address 기울임 없애기 */
+address {
+  text-decoration: none;
+  font-style: normal;
+}
 
 /* 2. 헤딩태그 글자크기 reset */
 

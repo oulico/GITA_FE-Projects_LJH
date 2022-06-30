@@ -100,33 +100,33 @@ li.on {
 .top__title {
   position: fixed;
   top: 0;
-  height: 65px;
+  height: var(--nav-height);
   width: 100%;
   z-index: 999999;
   background-color: rgb(243, 243, 243);
 }
 
 body {
-  --nav-height: 60px;
   padding-top: var(--nav-height);
 }
 /* tmzm */
-nav {
-  background-color: rgb(243, 243, 243);
+body nav {
   height: var(--nav-height);
-  position: fixed;
-  top: 65px;
-  transition: transform 0.2s ease-in-out;
-  width: 100%;
 }
 
 nav.gnb {
-  border-bottom: 2px solid;
-  box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.412);
   z-index: 999998;
+  background-color: rgb(243, 243, 243);
+  position: fixed;
+  top: var(--nav-height);
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+  box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.412);
+  outline: 2px solid black;
 }
 
 .nav--hidden {
-  transform: translateY(calc(-1 * var(--nav-height) + 2px));
-  box-shadow: none;
+  transform: translateY(calc(-1 * var(--nav-height)));
+  height: var(--nav-height);
+  /* box-shadow: none; */
 }
