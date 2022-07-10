@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-/************* var ******************/
-/* cubic-bezier(0.36, 1.14, 1, 1); */
 :root {
   margin: 0;
   padding: 0;
@@ -53,6 +51,7 @@ h1 {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   font-size: 8rem;
+  white-space: nowrap;
 }
 
 .ibx {
