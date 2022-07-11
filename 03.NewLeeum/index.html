@@ -9,8 +9,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css"
     />
-    <!-- 부드러운 스크롤 -->
-    <script src="js/smoothScroll20.js"></script>
+
   </head>
 
   <!-- 
@@ -40,22 +39,26 @@
     <div id="top">
       <header class="top">
         <div class="top__title">
-          <a href="./index.html">
+          <a class="cursorMano" href="./index.html">
             <div class="title">
               <img src="assets/leeumLogo.png" alt="LEEUM" />
             </div>
           </a>
           <!-- 스프라이트를 활용한 sns 이미지  -->
           <aside>
-            <ol class="sns">
+            <ol class="sns cursorMano">
               <li>
-                <a href="#"> <span class="ir">트위터 바로가기</span></a>
+                <a href="https://www.youtube.com/channel/UCyXVnJijxHsBrzN9AAZ-Yxw"> <span class="ir" title="리움의 트위터로 이동합니다">트위터 바로가기</span></a>
               </li>
               <li>
-                <a href="#"> <span class="ir">인스타그램 바로가기</span></a>
+                <a href="https://www.instagram.com/leeummuseumofart/">
+                  <span class="ir" title="리움의 인스타그램으로 이동합니다">인스타그램 바로가기</span></a
+                >
               </li>
               <li>
-                <a href="#"> <span class="ir">페이스북 바로가기</span></a>
+                <a href="https://www.facebook.com/leeumofficial">
+                  <span class="ir" title="리움의 페이스북으로 이동합니다">페이스북 바로가기</span></a
+                다
               </li>
               <li onclick="search()">
                 <span class="ir">검색</span>
@@ -69,29 +72,32 @@
 
         <nav class="gnb">
           <ul>
-            <li class="menu-1">
+            <li class="menu-1 cursorMano">
               <a href="#top">HOME</a>
             </li>
-            <li class="menu-2">
-              <a href="#sec3">전시</a>
+            <li class="menu-2 cursorMano">
+              <a href="#sec3">전시개요</a>
             </li>
-            <li class="menu-3">
-              <a href="#sec5">작가</a>
+            <li class="menu-3 cursorMano">
+              <a href="#sec4">작가</a>
             </li>
-            <li class="menu-4">
-              <a href="#sec6">소장품</a>
+            <li class="menu-4 cursorMano">
+              <a href="#sec5">작품</a>
             </li>
-            <li class="menu-5">
+            <li class="menu-5 cursorMano">
+              <a href="#sec6">미디어</a>
+            </li>
+            <li class="menu-5 cursorMano">
               <a href="#sec7">공간</a>
             </li>
-            <li class="menu-2">
-              <a href="">멤버스</a>
+            <li class="menu-2 cursorMano">
+              <a href="#top">멤버스</a>
             </li>
           </ul>
         </nav>
       </header>
+      <div class="float btn"></div>
     </div>
-
     <div id="cont">
       <main class="cont">
         <section class="ibx section-1">
@@ -127,7 +133,7 @@
             >
               <source src="assets/video/mVidV2.mp4" />
             </video>
-            <a class="fi fi-play">
+            <a class="fi fi-play cursorMano">
               <span class="ir">play</span>
             </a>
           </div>
@@ -173,32 +179,40 @@
           <div class="section-4__heading">
             <h2>작가</h2>
           </div>
-          <div class="section-4__chevron">
-            <i class="fa fa-chevron-up fa-3x chevrons"></i>
+          <div class="section-4__chevron upBtn">
+            <i class="fa fa-chevron-up fa-3x cursorMano chevrons"></i>
           </div>
           <div class="section-4__body">
-            <ul class="slide">
+            <ul id="slide">
               <li class="cont__card c1" onclick="slideDown(`c1`)">
                 <div class="cont__card__img"></div>
                 <div class="cont__card__name"><h1>Ayoung Kim</h1></div>
               </li>
               <li class="cont__card c2" onclick="slideDown(`c2`)">
-                <div class="cont__card__name"><h1>Ayoung Kim</h1></div>
+                <div class="cont__card__name"><h1>Yi-Bool</h1></div>
                 <div class="cont__card__img"></div>
               </li>
               <li class="cont__card c3" onclick="slideDown(`c3`)">
                 <div class="cont__card__img"></div>
-                <div class="cont__card__name"><h1>Ayoung Kim</h1></div>
+                <div class="cont__card__name"><h1>Oksun Kim</h1></div>
               </li>
               <li class="cont__card c4" onclick="slideDown(`c4`)">
-                <div class="cont__card__name"><h1>Ayoung Kim</h1></div>
+                <div class="cont__card__name"><h1>Wan Lee</h1></div>
+                <div class="cont__card__img"></div>
+              </li>
+              <li class="cont__card c5" onclick="slideDown(`c5`)">
+                <div class="cont__card__img"></div>
+                <div class="cont__card__name"><h1>Hongsuk</h1></div>
+              </li>
+              <li class="cont__card c6" onclick="slideDown(`c6`)">
+                <div class="cont__card__name"><h1>Minha Park</h1></div>
                 <div class="cont__card__img"></div>
               </li>
             </ul>
           </div>
 
-          <div class="section-4__chevron">
-            <i class="fa fa-chevron-down fa-3x chevrons"></i>
+          <div class="section-4__chevron downBtn">
+            <i class="fa fa-chevron-down fa-3x cursorMano chevrons"></i>
           </div>
         </section>
 
@@ -238,41 +252,106 @@
                 </div>
               </div>
               <div class="section-5__body__box sec5-1">
-                <div class="secArtBox secArt-1"></div>
+                <div class="secArtBox secArt-2"></div>
                 <div>
                   <h3>
-                    볼프강 라이프 <br />
-                    장소도 시간도 실체도 없는
+                    프랑크 게리<br />
+                    무제(로스앤젤레스 I), 무제(로스앤젤레스 IV) (일부)
                   </h3>
                   <h4>
-                    2003 밀랍, 나무<br />
+                    2012-2013 철사, 플라스틱 라미네이트(컬러코어), 실리콘<br />
                     전시중 ( M2 , BF )
                   </h4>
                 </div>
               </div>
               <div class="section-5__body__box sec5-1">
-                <div class="secArtBox secArt-1"></div>
+                <div class="secArtBox secArt-3"></div>
                 <div>
                   <h3>
-                    볼프강 라이프 <br />
-                    장소도 시간도 실체도 없는
+                    김홍석<br />
+                    비닐봉지
                   </h3>
                   <h4>
-                    2003 밀랍, 나무<br />
+                    2011, 청동<br />
+                    전시중 ( M2 , 2F )
+                  </h4>
+                </div>
+              </div>
+              <div class="section-5__body__box sec5-1">
+                <div class="secArtBox secArt-4"></div>
+                <div>
+                  <h3>
+                    이사무 노구치  <br />
+                    고독
+                  </h3>
+                  <h4>
+                    1962, 청동, 검정색 파티나<br />
+                    전시중 ( M2 , 2F )
+                  </h4>
+                </div>
+              </div>
+              <div class="section-5__body__box sec5-1">
+                <div class="secArtBox secArt-5"></div>
+                <div>
+                  <h3>
+                    살바도르 달리 <br />
+                    우주 코끼리
+                  </h3>
+                  <h4>
+                    1980, 청동, 수지
+                    
+                  </h4>
+                </div>
+              </div>
+              <div class="section-5__body__box sec5-1">
+                <div class="secArtBox secArt-6"></div>
+                <div>
+                  <h3>
+                    폴 매카시 <br />
+                    설백(雪白) 난쟁이(행복이)
+                  </h3>
+                  <h4>
+                    2010, 실리콘<br />
+                    전시중 ( M2 , 2F )
+                  </h4>
+                </div>
+              </div>
+              <div class="section-5__body__box sec5-1">
+                <div class="secArtBox secArt-7"></div>
+                <div>
+                  <h3>
+                    루이즈 부르주아<br />
+                   숲(밤의 정원)
+                  </h3>
+                  <h4>
+                    1953, 청동에 갈색과 검정색 파티나, 흰색 페인트전시중<br />
+                     ( M2 , 2F )
+                  </h4>
+                </div>
+              </div>
+              <div class="section-5__body__box sec5-1">
+                <div class="secArtBox secArt-8"></div>
+                <div>
+                  <h3>
+                    올라퍼 엘리아슨  <br />
+                    당신의 예측 불가능한 여정
+                  </h3>
+                  <h4>
+                    2016,유리 구슬, 은, 금, 페인트, 색유리 구슬, 스테인리스 스틸, 합판<br />
                     전시중 ( M2 , BF )
                   </h4>
                 </div>
               </div>
               <div class="section-5__body__box sec5-1">
-                <div class="secArtBox secArt-1"></div>
+                <div class="secArtBox secArt-9"></div>
                 <div>
                   <h3>
-                    볼프강 라이프 <br />
-                    장소도 시간도 실체도 없는
+                    이불  <br />
+                    무제
                   </h3>
                   <h4>
-                    2003 밀랍, 나무<br />
-                    전시중 ( M2 , BF )
+                    2010, EVA <br />
+                    패널전시중 ( M2 , 1F )
                   </h4>
                 </div>
               </div>

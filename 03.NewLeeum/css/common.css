@@ -10,10 +10,17 @@
 
   /************* var **************/
   /* nav height*/
-  --nav-height: 65px;
+  --nav-height: 80px;
   --color-black: rgb(28, 28, 28);
 }
 
+.cursorMano * {
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Oswald", sans-serif;
 }
@@ -21,7 +28,7 @@ body {
 
 section {
   width: 100vw;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
 }
 
 .leftPadding {
@@ -130,9 +137,6 @@ li.menu-3:hover .menu-3__smenu {
 .menu-3__smenu > ol {
   margin: 0 15px 15px 15px;
 }
-li {
-  cursor: pointer;
-}
 
 .clb li {
   display: inline;
@@ -175,7 +179,5 @@ footer {
 /* cursor */
 
 * {
-  cursor: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 512 512'%3e%3cg transform='rotate(45 256 256)'%3e%3crect id='r' x='16' y='216' width='480' height='80' rx='14'/%3e%3cuse href='%23r' transform='rotate(90 256 256)'/%3e%3c/g%3e%3c/svg%3e")
-      16 16,
-    pointer;
+  cursor: url(../img/svg/dotBlack.png) 32 32, pointer;
 }

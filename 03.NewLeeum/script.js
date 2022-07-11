@@ -1,6 +1,3 @@
-// 부드러운 스크롤 호출
-startSS();
-
 const slidePosistion = [];
 // 위치값 저장할 변수
 
@@ -8,7 +5,7 @@ const winHeight = (window.innerHeight / 3) * 2;
 // 화면 높이값 기준 등장액션 위치 보정변수
 
 function search() {
-  console.log("clicked");
+  // console.log("clicked");
 
   const target = document.querySelector(".sns > li:last-child");
   target.classList.toggle("on");
@@ -29,19 +26,17 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = window.scrollY;
 });
-
+////////////////////////////
+/// 스크롤에 반응하여 등장 //
+/////////////////////////////
 function slideDown(n) {
-  console.log("slideDown");
+  // console.log("slideDown");
 
   const target = document.querySelector(`.cont__desc.${n}`);
-  console.log(`.cont__desc.${n}`);
+  // console.log(`.cont__desc.${n}`);
 
   target.classList.toggle(`on`);
 }
-
-/////////////////
-//////section which has animation : slideUp////
-/////////////////
 
 let slideUp = document.querySelectorAll(".slideUp");
 for (let x of slideUp) x.classList.add("opacity0");
@@ -52,7 +47,7 @@ slideUp.forEach((ele, idx) => {
   slidePosistion[idx] = ele.offsetTop;
 }); ////////// forEach //////
 // 위치배열 변수 확인
-console.log(slidePosistion);
+// console.log(slidePosistion);
 
 /**************************
  *  [윈도우 스크롤 이벤트 함수]
@@ -68,7 +63,7 @@ function scAction(seq) {
 
 window.addEventListener("scroll", () => {
   scTop = this.scrollY;
-  console.log("Scroll Location :", scTop);
+  // console.log("Scroll Location :", scTop);
   // scroll 위치 표시
 
   //////////////////////////////////////
@@ -79,27 +74,122 @@ window.addEventListener("scroll", () => {
   slidePosistion.forEach((val, idx) => scAction(idx));
   // 배열변수.forEach((배열값, 순번)=>{구현코드})
 
-  console.log(slideUp[0].offsetTop);
+  // console.log(slideUp[0].offsetTop);
 }); //////// scroll ///////////////
 
 //////배너 슬라이드///////
 
-const upBtn = document.querySelector(".fa-chevron-up");
-const downBtn = document.querySelector(".fa-chevron-down");
+/***************************************************************
+ * [슬라이드 이동 기능정의]
+ * 1. 이벤트 종류 : click
+ * 2. 이벤트 대상: 이동버튼(.fa-chevron-up)
+ * 3. 변경 대상: 슬라이드 박스
+ * 4. 기능 설계:
+ *     (1) 오른쪽 버튼 클릭시 다음 슬라이드가 나타나도록
+ *          슬라이드 박스의 top값을 -220px로 변경시킨다
+ *          -> 슬라이드 이동후 바깥에 나가있는 첫번째 슬라이드 li를
+ *             잘라서 맨뒤로 보낸다.
+ *             동시에 top값을 0으로 변경한다
+ *
+ *     (2) 왼쪽 버튼 클릭시 이전 슬라이드가 나타나도록 하기 위해
+ *         우선 맨뒤 li를 맨 앞으로 이동하고 동시에 top값을
+ *         -220px로 변경한다.
+ *         그 후 top값을 0으로 애니메이션하여 슬라이드가 왼쪽에서 들어온다
+ *
+ ***************************************************************/
 
-const targetUl = document.querySelector(".slide");
+/***************************************************************
+ * 함수명 : loadFn
+ * 기능: 로딩 후 버튼 이벤트 및 기능 구현
+ **************************************************************/
 
-upBtn.onclick = function () {
-  targetUl.style.top = "-220px";
-  console.log("올라갑니다잉");
-};
+function loadFn() {
+  // 1. 호출확인
+  // console.log("로딩완료");
 
-downBtn.onclick = function () {
-  console.log("내려갑니다잉");
-  targetUl.style.top = "220px";
-};
+  // 2. 변경대상
+  const slide = document.querySelector("#slide");
+  // console.log("슬라이드:", slide);
 
-//// audio player 등장 ////
+  // 3. 이동버튼에 클릭이벤트 설정
+  // 이동버튼요소
+  const slideBtn = document.querySelectorAll(".section-4__chevron");
+  // console.log("이동버튼:", slideBtn);
+
+  // 광클 금지용 변수
+  let clickDisabled = 0; // 0 : 허용 1 : 금지
+
+  // 버튼개수만큼 for of로 클릭이벤트 설정
+  for (let x of slideBtn) {
+    x.onclick = () => {
+      ////// 광클 금지 ///////
+      if (clickDisabled) return;
+      clickDisabled = 1;
+      setTimeout(() => (clickDisabled = 0), 1010);
+      ////////////////////////
+
+      // 위 버튼 여부 확인
+      let isUp = x.classList.contains("upBtn");
+      console.log(".upBtn인가?: ", isUp);
+
+      // 위 버튼 / 아래 버튼 분기하기
+      if (isUp) {
+        //  1. 슬라이드 top : -220px
+        slide.style.top = "-220px";
+        slide.style.transition = "top 1s ease-in-out";
+        // 이동후 실행 -> 이동시간은 1초
+        setTimeout(() => {
+          // 2. 첫번째 li를 맨뒤로 이동
+          // 첫번째 li
+          let firstLi = slide.querySelectorAll("li")[0];
+          // 맨뒤로 이동
+          slide.appendChild(firstLi);
+          // 3. 동시에 top값을 0으로
+          slide.style.top = "0";
+          // 트랜지션 해제
+          slide.style.transition = "none";
+        }, 1000); //////// Timeout ////////
+
+        // 위 버튼 //
+      } ////// if ///////
+      else {
+        // 맨뒤 li 맨앞으로 이동
+        // li 들
+        let lis = slide.querySelectorAll("li");
+        //
+        slide.insertBefore(lis[lis.length - 1], lis[0]);
+        //  2. 동시에 슬라이드 top : -220px
+        slide.style.top = "-220px";
+        slide.style.transition = "none";
+        // 위의 이동소스와 약간의 시차필요
+        setTimeout(() => {
+          // 3. top:0 + 트랜지션
+          slide.style.top = "0";
+          slide.style.transition = "top 1s ease-in-out";
+          // 아래 버튼 //
+        }, 10); ///// Timeout ////////
+      } //////else/////
+    }; // click //
+  } // for of //
+}
+loadFn();
+
+// const upBtn = document.querySelector(".fa-chevron-up");
+// const downBtn = document.querySelector(".fa-chevron-down");
+
+// const targetUl = document.querySelector(".slide");
+
+// upBtn.onclick = function () {
+//   targetUl.style.top = "-220px";
+//   console.log("올라갑니다잉");
+// };
+
+// downBtn.onclick = function () {
+//   console.log("내려갑니다잉");
+//   targetUl.style.top = "220px";
+// };
+
+/////////////////////// audio player 등장 //////////////////////////
 const audioBtn = document.querySelector(".fbx");
 const audioController = document.querySelector("audio");
 
@@ -107,4 +197,21 @@ audioBtn.addEventListener("click", function (e) {
   audioController.play();
   audioController.setAttribute("controls", "true");
 });
-console.log(audioBtn);
+// console.log(audioBtn);
+
+/////////////// 가로스크롤하기 //////////////
+
+const container = document.getElementById("sec5");
+// where "container" is the id of the container
+container.addEventListener("wheel", function (e) {
+  if (e.deltaY > 0) {
+    container.scrollLeft += 100;
+    e.preventDefault();
+    // prevenDefault() will help avoid worrisome
+    // inclusion of vertical scroll
+  } else {
+    container.scrollLeft -= 100;
+    e.preventDefault();
+  }
+});
+// That will work perfectly

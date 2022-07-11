@@ -98,7 +98,7 @@
 }
 
 video {
-  height: 65vh;
+  height: 90vh;
   width: 100%;
   object-fit: cover;
 }
@@ -142,6 +142,10 @@ section.ibx.section-1 {
     opacity: 1;
   }
 }
+section#sec2 {
+  height: 110vh;
+  /* 섹션2는 다른 섹션보다 좀 더 길다 */
+}
 
 .section-2__vidBox {
   margin: 0 auto;
@@ -163,9 +167,8 @@ section.ibx.section-1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* parent:section-2__vidBox */
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
   z-index: 999;
-  cursor: url(../img/svg/64px-Mano_cursor.svg.png), pointer;
 }
 
 .section-2__intro {
@@ -174,7 +177,7 @@ section.ibx.section-1 {
   top: 140px;
   z-index: 999;
   opacity: 0;
-  animation: slideRight 1.5s cubic-bezier(0.36, 1.14, 1, 1) 1.2s forwards;
+  animation: slideRight 1.5s cubic-bezier(0.36, 1.14, 1, 1) 4.5s forwards;
 }
 @keyframes slideRight {
   from {
@@ -209,9 +212,7 @@ section.ibx.section-1 {
   display: flex;
   justify-content: center;
 }
-.section-4__chevron .fa {
-  cursor: url(../img/svg/64px-Mano_cursor.svg.png), pointer;
-}
+
 /* 
 .chevrons {
   position: absolute;
@@ -224,17 +225,28 @@ section#sec4 {
   margin: 5vh 0 5vh;
 }
 .section-4__heading {
-  padding-left: 6vw;
+  padding: 6vw 6vw 0vw 6vw;
+}
+.section-5__heading {
+  padding: 6vw 6vw 0vw 6vw;
+}
+.section-6__heading {
+  padding: 6vw 6vw 0vw 6vw;
+}
+.section-7__heading {
+  padding: 6vw;
 }
 .section-4__body {
   overflow: hidden;
-  height: calc(100% - 44vh);
+  height: 50vh;
   width: 100%;
   position: relative;
-  margin: 10vh 0 10vh;
+  margin: 5vh 0 5vh;
 }
-.slide {
+
+#slide {
   left: 50%;
+  top: 0;
   transform: translateX(-50%);
   position: absolute;
 }
@@ -255,9 +267,9 @@ section#sec4 {
   margin-bottom: 20px;
 }
 
-/* .cont__card:hover * {
-  cursor: url(../img/svg/128px-Speaker_Icon.svg.png);
-} */
+.fa {
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
+}
 
 .cont__card__name {
   margin: 0 40px 0;
@@ -272,7 +284,7 @@ section#sec4 {
   border-bottom: 2px solid black;
 }
 .section-4__body:hover * {
-  cursor: url(../img/svg/64px-Mano_cursor.svg.png), pointer;
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
 }
 
 .c1 > .cont__card__img {
@@ -280,52 +292,84 @@ section#sec4 {
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum1.jpeg) center / cover;
-  transition: background 0.3s;
+  transition: background-image 0.4s;
 }
 .c1:hover > .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum1-on.jpeg) center / cover;
+  transition: background-image 0.4s;
 }
 .c2 > .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
-  background: url(../img/art_spectrum1.jpeg) center / cover;
-  transition: background 0.3s;
+  background: url(../img/art_spectrum2.jpg) center / cover;
+  transition: background-image 0.4s;
 }
 .c2:hover > .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
-  background: url(../img/art_spectrum1-on.jpeg) center / cover;
+  background: url(../img/art_spectrum2-on.jpg) center / cover;
+  transition: background-image 0.4s;
 }
 .c3 > .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
-  background: url(../img/art_spectrum1.jpeg) center / cover;
-  transition: background 0.3s;
+  background: url(../img/art_spectrum3.jpg) center / cover;
+  transition: background-image 0.4s;
 }
 .c3:hover > .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
-  background: url(../img/art_spectrum1-on.jpeg) center / cover;
+  background: url(../img/art_spectrum3-on.jpg) center / cover;
+  transition: background-image 0.4s;
 }
 .c4 > .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
-  background: url(../img/art_spectrum1.jpeg) center / cover;
-  transition: background 0.3s;
+  background: url(../img/art_spectrum4.jpg) center / cover;
+  transition: background-image 0.4s;
 }
 .c4:hover > .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
-  background: url(../img/art_spectrum1-on.jpeg) center / cover;
+  background: url(../img/art_spectrum4-on.jpg) center / cover;
+  transition: background-image 0.4s;
+}
+.c5 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art_spectrum5.jpg) center / cover;
+  transition: background-image 0.4s;
+}
+.c5:hover > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art_spectrum5-on.jpg) center / cover;
+  transition: background-image 0.4s;
+}
+.c6 > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art_spectrum6.jpg) center / cover;
+  transition: background-image 0.4s;
+}
+.c6:hover > .cont__card__img {
+  width: 400px;
+  height: 200px;
+  /* 색이반고윙크 */
+  background: url(../img/art_spectrum6-on.jpg) center / cover;
+  transition: background-image 0.4s;
 }
 
 /* 슬라이딩 설명 */
@@ -384,11 +428,21 @@ section#sec4 {
 .section-5 {
   box-sizing: border-box;
   color: rgb(243, 243, 243);
-  width: 100vw;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
+  background: black;
   overflow-x: scroll;
-  background: var(--color-black);
-  margin-bottom: 130px;
+  overflow-y: hidden;
+  padding-right: 10vw;
+  position: relative;
+}
+.section-5_bg::before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 300px;
+  width: 900px;
+  content: "";
+  outline: red solid 2px;
 }
 .section-5_bg {
   margin-top: 30px;
@@ -401,22 +455,49 @@ section#sec4 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-content: flex-end;
+  align-content: center;
   padding-left: 3vw;
+  justify-content: flex-start;
+  height: 100%;
 }
 
+.section-5__body__box.sec5intro {
+  width: 20vw;
+}
 .section-5__body__box {
-  flex-basis: 30vw;
-  flex-shrink: 0;
-  width: 30vw;
   padding: 30px;
+  flex-shrink: 0;
 }
 .secArtBox {
-  max-width: 400px;
-  height: 410px;
+  width: 50vh;
+  height: 50vh;
 }
 .secArt-1 {
-  background: url(../img/sec5art1.jpeg) 0px center / 100% no-repeat;
+  background: url(../img/sec5/secArt-1.jpeg) no-repeat center / cover;
+}
+.secArt-2 {
+  background: url(../img/sec5/secArt-2.jpg) no-repeat center / cover;
+}
+.secArt-3 {
+  background: url(../img/sec5/secArt-3.jpg) no-repeat center / cover;
+}
+.secArt-4 {
+  background: url(../img/sec5/secArt-4.jpg) no-repeat center / cover;
+}
+.secArt-5 {
+  background: url(../img/sec5/secArt-5.jpg) no-repeat center / cover;
+}
+.secArt-6 {
+  background: url(../img/sec5/secArt-6.jpg) no-repeat center / cover;
+}
+.secArt-7 {
+  background: url(../img/sec5/secArt-7.jpg) no-repeat center / cover;
+}
+.secArt-8 {
+  background: url(../img/sec5/secArt-8.jpg) no-repeat center / cover;
+}
+.secArt-9 {
+  background: url(../img/sec5/secArt-9.jpg) no-repeat center / cover;
 }
 .sec5intro h3 {
   font-weight: 400;
@@ -491,8 +572,11 @@ audio::-webkit-media-controls-panel {
 
 /* section 7 *******************/
 .section-7 {
-  height: calc(100vh - var(--nav-height));
   position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  /* height: calc(100vh - var(--nav-height) - 10px); */
+  overflow-x: scroll;
 }
 .section-7__body {
   width: 100%;
@@ -500,7 +584,7 @@ audio::-webkit-media-controls-panel {
 }
 .section-7__body p {
   width: 520px;
-  bottom: 50%;
+  top: 50%;
   transform: translateX(-50%);
   position: absolute;
   left: 50%;
@@ -513,7 +597,7 @@ audio::-webkit-media-controls-panel {
   position: absolute;
 }
 .section-7.on .section-7__body div:nth-of-type(1) {
-  bottom: 80%;
+  top: 20%;
   left: 50%;
   width: 15vw;
   height: 15vh;
@@ -522,7 +606,7 @@ audio::-webkit-media-controls-panel {
   animation: spreadPicture 0.8s ease-out 0s forwards;
 }
 .section-7.on .section-7__body div:nth-of-type(2) {
-  bottom: 70%;
+  top: 30%;
   left: 80%;
   width: 15vw;
   height: 15vh;
@@ -531,7 +615,7 @@ audio::-webkit-media-controls-panel {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(3) {
-  bottom: 70%;
+  top: 30%;
   left: 20%;
   width: 15vw;
   height: 15vh;
@@ -540,7 +624,7 @@ audio::-webkit-media-controls-panel {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(4) {
-  bottom: 20%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%);
   width: 15vw;
@@ -550,7 +634,7 @@ audio::-webkit-media-controls-panel {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(5) {
-  bottom: 30%;
+  top: 70%;
   left: 80%;
   width: 15vw;
   height: 15vh;
@@ -559,7 +643,7 @@ audio::-webkit-media-controls-panel {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(6) {
-  bottom: 30%;
+  top: 70%;
   left: 20%;
   width: 15vw;
   height: 15vh;

@@ -35,26 +35,27 @@
   width: 30px;
   height: 30px;
 }
-.sns li:first-child {
+.sns li:first-child:hover {
+  background-position: 0 0;
   vertical-align: middle;
 }
-.sns li:first-child:hover {
+.sns li:first-child {
   background-position: 0 -30px;
   vertical-align: middle;
 }
-.sns li:nth-child(2) {
+.sns li:nth-child(2):hover {
   background-position: -30px 0;
   vertical-align: middle;
 }
-.sns li:nth-child(2):hover {
+.sns li:nth-child(2) {
   background-position: -30px -30px;
   vertical-align: middle;
 }
-.sns li:nth-child(3) {
+.sns li:nth-child(3):hover {
   background-position: -60px 0;
   vertical-align: middle;
 }
-.sns li:nth-child(3):hover {
+.sns li:nth-child(3) {
   background-position: -60px -30px;
   vertical-align: middle;
 }
@@ -85,7 +86,7 @@ input:focus {
   width: 0;
   height: 15px;
   vertical-align: middle;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--color-black);
   transition: width 0.4s ease-in-out;
   overflow: hidden;
 }
@@ -113,7 +114,85 @@ li.on {
   left: 0;
   right: 0;
   bottom: 0;
-  background: black;
+  background: var();
+}
+/* 플로팅 버튼 */
+.top {
+  position: relative;
+}
+.float > h2 {
+  line-height: 50px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png), pointer;
+}
+
+.btn {
+  background-color: white;
+  text-align: center;
+  opacity: 0;
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png), pointer;
+  letter-spacing: 1px;
+  color: whitesmoke;
+  outline: 0;
+  border: 1px solid black;
+  box-shadow: 1px blur #000;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 0;
+  height: 60px;
+  line-height: 60px;
+  bottom: 60px;
+  left: 60px;
+  position: fixed;
+  z-index: 999998;
+  animation: showingBtn 0.4s ease-in-out 10s forwards;
+}
+
+@keyframes showingBtn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 120px;
+    opacity: 1;
+  }
+}
+
+.btn:after {
+  font-family: "Oswald", "Nanum", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 80px;
+  color: whitesmoke;
+  font-size: 30px;
+  content: "예매하기";
+  background-color: var(--color-black);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.btn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 13px 50px 13px;
+  }
 }
 
 body {
