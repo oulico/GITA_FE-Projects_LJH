@@ -422,28 +422,17 @@ section#sec4 {
   z-index: -9;
 } */
 
-.section-5:hover * {
-  cursor: url(../img/svg/64px-Icon_Information.svg.png), pointer;
-}
 .section-5 {
+  cursor: url(../img/svg/64px-Icon_Information.svg.png), pointer;
   box-sizing: border-box;
   color: rgb(243, 243, 243);
   height: 100vh;
   background: black;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   padding-right: 10vw;
-  position: relative;
 }
-.section-5_bg::before {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 300px;
-  width: 900px;
-  content: "";
-  outline: red solid 2px;
-}
+
 .section-5_bg {
   margin-top: 30px;
 }
@@ -472,6 +461,7 @@ section#sec4 {
   width: 50vh;
   height: 50vh;
 }
+
 .secArt-1 {
   background: url(../img/sec5/secArt-1.jpeg) no-repeat center / cover;
 }

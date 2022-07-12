@@ -206,6 +206,7 @@ const container = document.getElementById("sec5");
 container.addEventListener("wheel", function (e) {
   if (e.deltaY > 0) {
     container.scrollLeft += 100;
+
     e.preventDefault();
     // prevenDefault() will help avoid worrisome
     // inclusion of vertical scroll
