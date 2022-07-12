@@ -14,6 +14,8 @@
 :root {
   --data-length1_1: 1000px;
   --data-length1_2: 1000px;
+  --data-length2_1: 1000px;
+  --data-length2_2: 1000px;
 }
 
 /* 글자 흐르기 키프레임 */
@@ -25,13 +27,12 @@
     transform: translateX(var(--data-length1_2));
   }
 }
-/* 키프레임 */
 @keyframes txtFlow2 {
   from {
-    left: calc(-3573px / 2);
+    transform: translateX(var(--data-length2_1));
   }
   to {
-    left: 0;
+    transform: translateX(var(--data-length2_2));
   }
 }
 
@@ -557,9 +558,10 @@ section#sec4 {
   transition: translateX;
 }
 .tbx.slideRight {
-  width: 3573px;
   bottom: 5px;
+  left: var(--data-length2_1);
   animation: txtFlow2 10s linear infinite;
+  transition: translateX;
 }
 
 audio {

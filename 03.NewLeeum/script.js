@@ -278,4 +278,23 @@ console.log("단위", textLen1WPx);
 document.documentElement.style.setProperty("--data-length1_1", 0);
 document.documentElement.style.setProperty("--data-length1_2", textLen2WPx);
 
+// 2. slideLeft 2번째 문장길이
+
+const text2 = document.getElementById("textLength2");
+const textLength2_1 = -text2.offsetWidth;
+const textLength2_2 = text2.offsetWidth;
+console.log("두번째문장길이", textLength2_1);
+console.log("두번째문장길이", textLength2_2);
+
+//from : - textLength1
+//to : - textLength1 *2
+
+// 단위 붙여주기
+const textLen3WPx = textLength2_1 + "px";
+const textLen4WPx = textLength2_2 + "px";
+console.log("단위", textLen3WPx);
+// 2. root의 --data-length1 값 바꿔주기
+document.documentElement.style.setProperty("--data-length2_1", textLen3WPx);
+document.documentElement.style.setProperty("--data-length2_2", textLen4WPx);
+
 //
