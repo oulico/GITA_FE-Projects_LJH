@@ -47,7 +47,7 @@ slideUp.forEach((ele, idx) => {
   slidePosistion[idx] = ele.offsetTop;
 }); ////////// forEach //////
 // 위치배열 변수 확인
-// console.log(slidePosistion);
+console.log(slidePosistion);
 
 /**************************
  *  [윈도우 스크롤 이벤트 함수]
@@ -203,16 +203,48 @@ audioBtn.addEventListener("click", function (e) {
 
 const container = document.getElementById("sec5");
 // where "container" is the id of the container
-container.addEventListener("wheel", function (e) {
-  if (e.deltaY > 0) {
-    container.scrollLeft += 100;
+let isCulDeSac;
 
+container.onmouseenter = function () {
+  window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
+};
+
+let culDeSac = container.scrollWidth - container.clientWidth;
+// console.log("마지막위치", culDeSac);
+
+//  - obj.offsetLeft - obj.offsetWidth
+// console.log(culDeSac);
+
+container.addEventListener("wheel", function (e) {
+  if (e.deltaY > 0 && container.scrollLeft === culDeSac) {
+    console.log("tail cul de sac");
+    window.scrollTo({ top: slidePosistion[3], behavior: "smooth" });
+  } else if (e.deltaY < 0 && container.scrollLeft === 0) {
+    console.log("head cul de sac");
+    window.scrollTo({ top: slidePosistion[1], behavior: "smooth" });
+    isCulDeSac = container.scrollLeft;
+  } else if (e.deltaY > 0) {
+    container.scrollLeft += 100;
+    console.log(container.scrollLeft);
     e.preventDefault();
     // prevenDefault() will help avoid worrisome
     // inclusion of vertical scroll
-  } else {
+  } else if (e.deltaY <= 0) {
     container.scrollLeft -= 100;
     e.preventDefault();
   }
 });
+
+// const exitHScrollZone = document.querySelector("#exitHScrollZone");
+// console.log(exitHScrollZone);
+// let lastScrollX = container.scrollLeft;
+
+// exitHScrollZone.addEventListener("wheel", () => {
+//   if (lastScrollX === container.scrollLeft) {
+//     // console.log("cul de sac");
+//     // prevenDefault() will help avoid worrisome
+//     // inclusion of vertical scroll
+//   }
+// });
+
 // That will work perfectly

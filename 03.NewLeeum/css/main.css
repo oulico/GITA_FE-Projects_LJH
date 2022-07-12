@@ -421,13 +421,26 @@ section#sec4 {
   background: rgb(29, 29, 29);
   z-index: -9;
 } */
+.section-5__body__box.sec5-9 {
+  position: relative;
+}
+
+#exitHScrollZone {
+  content: "";
+  right: 0;
+  top: -20%;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
 
 .section-5 {
+  box-shadow: inset 0 30px 30px -30px black;
   cursor: url(../img/svg/64px-Icon_Information.svg.png), pointer;
   box-sizing: border-box;
   color: rgb(243, 243, 243);
   height: 100vh;
-  background: black;
+  background: var(--color-black);
   overflow-x: hidden;
   overflow-y: hidden;
   padding-right: 10vw;
