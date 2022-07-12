@@ -10,6 +10,31 @@
 /* 아이콘 */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
+/* 변수 */
+:root {
+  --data-length1_1: 1000px;
+  --data-length1_2: 1000px;
+}
+
+/* 글자 흐르기 키프레임 */
+@keyframes txtFlow1 {
+  from {
+    transform: translateX(var(--data-length1_1));
+  }
+  to {
+    transform: translateX(var(--data-length1_2));
+  }
+}
+/* 키프레임 */
+@keyframes txtFlow2 {
+  from {
+    left: calc(-3573px / 2);
+  }
+  to {
+    left: 0;
+  }
+}
+
 /**********************
 메인
 **********************/
@@ -238,7 +263,7 @@ section#sec4 {
 }
 .section-4__body {
   overflow: hidden;
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   position: relative;
   margin: 5vh 0 5vh;
@@ -411,16 +436,13 @@ section#sec4 {
 
 /** section5 ********************************/
 
-/* 
-.section-5::before {
-  content: "";
-  left: 0%;
-  top: -50px;
-  bottom: 0;
-  right: 0;
-  background: rgb(29, 29, 29);
-  z-index: -9;
+/* 스크롤 방지
+
+.stop-scrolling {
+  width: 100%;
+  overflow: hidden;
 } */
+
 .section-5__body__box.sec5-9 {
   position: relative;
 }
@@ -529,9 +551,10 @@ section#sec4 {
   margin-bottom: 50px;
 }
 .tbx.slideLeft {
-  width: 4522px;
   top: 5px;
+  left: var(--data-length1_1);
   animation: txtFlow1 10s linear infinite;
+  transition: translateX;
 }
 .tbx.slideRight {
   width: 3573px;
@@ -547,25 +570,6 @@ audio::-webkit-media-controls-panel {
   margin: 0 auto;
 
   background-color: white;
-}
-
-/* 글자 흐르기 키프레임 */
-@keyframes txtFlow1 {
-  from {
-    left: 0;
-  }
-  to {
-    left: -2261px;
-  }
-}
-/* 키프레임 */
-@keyframes txtFlow2 {
-  from {
-    left: calc(-3573px / 2);
-  }
-  to {
-    left: 0;
-  }
 }
 
 .articleSection {

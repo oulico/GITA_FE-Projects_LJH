@@ -205,18 +205,26 @@ const container = document.getElementById("sec5");
 // where "container" is the id of the container
 let isCulDeSac;
 
+const scrollPreventLayer = document.getElementById("cont_2");
+
 container.onmouseenter = function () {
   window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
+  // scrollPreventLayer.classList.add("stop-scrolling");
+  // setTimeout(() => {
+  //   scrollPreventLayer.classList.remove("stop-scrolling");
+  // }, 400);
+  // 스크롤 가로모드로 전환되는 동안 스크롤 방지 -- 삭제
 };
 
 let culDeSac = container.scrollWidth - container.clientWidth;
-// console.log("마지막위치", culDeSac);
+
+console.log("마지막위치", culDeSac);
 
 //  - obj.offsetLeft - obj.offsetWidth
 // console.log(culDeSac);
 
 container.addEventListener("wheel", function (e) {
-  if (e.deltaY > 0 && container.scrollLeft === culDeSac) {
+  if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
     console.log("tail cul de sac");
     window.scrollTo({ top: slidePosistion[3], behavior: "smooth" });
   } else if (e.deltaY < 0 && container.scrollLeft === 0) {
@@ -248,3 +256,26 @@ container.addEventListener("wheel", function (e) {
 // });
 
 // That will work perfectly
+
+/////////////////흐르는 문자 애니메이션 ////////////////////
+
+// 1. slideLeft 첫번째 문장길이
+
+const text1 = document.getElementById("textLength1");
+const textLength1_1 = -text1.offsetWidth;
+const textLength1_2 = -text1.offsetWidth * 2;
+console.log("첫번째문장길이", textLength1_1);
+console.log("첫번째문장길이", textLength1_2);
+
+//from : - textLength1
+//to : - textLength1 *2
+
+// 단위 붙여주기
+const textLen1WPx = textLength1_1 + "px";
+const textLen2WPx = textLength1_2 + "px";
+console.log("단위", textLen1WPx);
+// 2. root의 --data-length1 값 바꿔주기
+document.documentElement.style.setProperty("--data-length1_1", 0);
+document.documentElement.style.setProperty("--data-length1_2", textLen2WPx);
+
+//
