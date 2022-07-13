@@ -211,7 +211,6 @@ container.onmouseover = function () {
     // 스크롤 가로모드로 전환되는 동안 스크롤 방지 -- 삭제
     window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
   }
-  ``;
 };
 container.addEventListener("wheel", function (e) {
   if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
