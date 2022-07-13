@@ -202,35 +202,59 @@ let isCulDeSac;
 let totalOffsetTop = window.scrollY;
 let eleOffsetTop = slidePosistion[2];
 
-container.onmouseover = function () {
+const scrollPreventLayer = document.querySelector(".section-5_bg");
+
+container.onmouseenter = function () {
   if (totalOffsetTop !== eleOffsetTop) {
     // scrollPreventLayer.classList.add("stop-scrolling");
-    // setTimeout(() => {
-    //   scrollPreventLayer.classList.remove("stop-scrolling");
-    // }, 400);
-    // 스크롤 가로모드로 전환되는 동안 스크롤 방지 -- 삭제
+    // console.log(scrollPreventLayer);
+    // 스크롤 가로모드로 전환되는 동안 스크롤 방지 시작
+    container.addEventListener("wheel", function (e) {
+      e.preventDefault();
+    });
     window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
   }
 };
-container.addEventListener("wheel", function (e) {
-  if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
-    console.log("tail cul de sac");
-    window.scrollTo({ top: slidePosistion[3], behavior: "smooth" });
-  } else if (e.deltaY < 0 && container.scrollLeft === 0) {
-    console.log("head cul de sac");
-    window.scrollTo({ top: slidePosistion[1], behavior: "smooth" });
-    isCulDeSac = container.scrollLeft;
-  } else if (e.deltaY > 0) {
-    container.scrollLeft += 100;
-    console.log(container.scrollLeft);
-    e.preventDefault();
-    // prevenDefault() will help avoid worrisome
-    // inclusion of vertical scroll
-  } else if (e.deltaY <= 0) {
-    container.scrollLeft -= 100;
-    e.preventDefault();
+container.onmouseover = function () {
+  if (totalOffsetTop !== eleOffsetTop) {
+    window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
   }
-});
+};
+
+container.addEventListener(
+  "wheel",
+  function (e) {
+    // scrollPreventLayer.classList.remove("stop-scrolling");
+    // 스크롤 방지 해제
+    setTimeout(() => {
+      if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
+        console.log("tail cul de sac");
+        container.onmouseover = function (e) {
+          e.preventDefault();
+        };
+        window.scrollTo({ top: slidePosistion[3], behavior: "smooth" });
+        //스크롤이 오른쪽 끝에 닿으면 다음 섹션으로 이동시키기
+      } else if (e.deltaY < 0 && container.scrollLeft === 0) {
+        // console.log("head cul de sac");
+        container.onmouseover = function (e) {
+          e.preventDefault();
+        };
+        window.scrollTo({ top: slidePosistion[1], behavior: "smooth" });
+        isCulDeSac = container.scrollLeft;
+        //스크롤이 왼쪽 끝에 닿으면 이전 섹션으로 이동시키기
+      } else if (e.deltaY > 0) {
+        container.scrollLeft += 20;
+        e.preventDefault();
+
+        // prevenDefault() 로 세로 스크롤을 막을 수 있다
+      } else if (e.deltaY <= 0) {
+        container.scrollLeft -= 20;
+        e.preventDefault();
+      }
+    });
+  },
+  400
+);
 
 let culDeSac = container.scrollWidth - container.clientWidth;
 

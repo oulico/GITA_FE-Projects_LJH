@@ -488,12 +488,12 @@ section#sec4 {
 
 /** section5 ********************************/
 
-/* 스크롤 방지
+/* 스크롤 방지 */
 
 .stop-scrolling {
   width: 100%;
   overflow: hidden;
-} */
+}
 
 .section-5__body__box.sec5-9 {
   position: relative;
