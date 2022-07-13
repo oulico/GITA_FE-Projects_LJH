@@ -264,7 +264,7 @@ section#sec4 {
 }
 .section-4__body {
   overflow: hidden;
-  height: 60vh;
+  height: 52vh;
   width: 100%;
   position: relative;
   margin: 5vh 0 5vh;
@@ -291,6 +291,9 @@ section#sec4 {
   height: 200px;
   margin-top: 20px;
   margin-bottom: 20px;
+  height: 15.5vh;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
 }
 
 .fa {
@@ -301,9 +304,11 @@ section#sec4 {
   margin: 0 40px 0;
   transition: border 0.3s;
   border-bottom: 2px solid white;
+  margin: 0px 3vh 0;
 }
 .cont__card__name > h1 {
   font-size: 148px;
+  font-size: 11.5vh;
 }
 
 .cont__card:hover > .cont__card__name {
@@ -315,10 +320,10 @@ section#sec4 {
 
 .c1 > .cont__card__img {
   width: 400px;
-  height: 200px;
-  /* 색이반고윙크 */
+  height: 15.6vh;
   background: url(../img/art_spectrum1.jpeg) center / cover;
   transition: background-image 0.4s;
+  width: 31vh;
 }
 .c1:hover > .cont__card__img {
   width: 400px;

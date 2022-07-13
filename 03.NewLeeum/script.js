@@ -205,24 +205,19 @@ const container = document.getElementById("sec5");
 // where "container" is the id of the container
 let isCulDeSac;
 
-const scrollPreventLayer = document.getElementById("cont_2");
+let totalOffsetTop = window.scrollY;
+let eleOffsetTop = slidePosistion[2];
 
-container.onmouseenter = function () {
-  window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
-  // scrollPreventLayer.classList.add("stop-scrolling");
-  // setTimeout(() => {
-  //   scrollPreventLayer.classList.remove("stop-scrolling");
-  // }, 400);
-  // 스크롤 가로모드로 전환되는 동안 스크롤 방지 -- 삭제
+container.onmouseover = function () {
+  if (totalOffsetTop !== eleOffsetTop) {
+    // scrollPreventLayer.classList.add("stop-scrolling");
+    // setTimeout(() => {
+    //   scrollPreventLayer.classList.remove("stop-scrolling");
+    // }, 400);
+    // 스크롤 가로모드로 전환되는 동안 스크롤 방지 -- 삭제
+    window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
+  }
 };
-
-let culDeSac = container.scrollWidth - container.clientWidth;
-
-console.log("마지막위치", culDeSac);
-
-//  - obj.offsetLeft - obj.offsetWidth
-// console.log(culDeSac);
-
 container.addEventListener("wheel", function (e) {
   if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
     console.log("tail cul de sac");
@@ -243,19 +238,9 @@ container.addEventListener("wheel", function (e) {
   }
 });
 
-// const exitHScrollZone = document.querySelector("#exitHScrollZone");
-// console.log(exitHScrollZone);
-// let lastScrollX = container.scrollLeft;
+let culDeSac = container.scrollWidth - container.clientWidth;
 
-// exitHScrollZone.addEventListener("wheel", () => {
-//   if (lastScrollX === container.scrollLeft) {
-//     // console.log("cul de sac");
-//     // prevenDefault() will help avoid worrisome
-//     // inclusion of vertical scroll
-//   }
-// });
-
-// That will work perfectly
+// console.log("마지막위치", culDeSac);
 
 /////////////////흐르는 문자 애니메이션 ////////////////////
 
