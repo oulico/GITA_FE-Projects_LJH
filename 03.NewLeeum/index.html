@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leeum</title>
     <link rel="stylesheet" href="./css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css"
-    />
+
     <!-- 부드러운 스크롤 -->
     <script src="./js/smoothScroll20.js"></script>
   </head>
@@ -40,6 +37,18 @@
     <div id="top">
       <header class="top">
         <div class="top__title">
+          <div class="top__title__videoFBox videoScreenAbsolute">
+            <iframe
+              height="100%"
+              src="https://www.youtube.com/embed/bkLSBqmDS3U?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;controls=0"
+              sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
+              width="80%"
+            >
+            </iframe>
+            <div class="closeBtn">
+              <i class="fa fa-window-close cursorMano"></i>
+            </div>
+          </div>
           <a class="cursorMano" href="./index.html">
             <div class="title">
               <img src="assets/leeumLogo.png" alt="LEEUM" />
@@ -151,7 +160,7 @@
             >
               <source src="assets/video/mVidV2.mp4" />
             </video>
-            <a class="fi fi-play cursorMano">
+            <a class="fi fi-play cursorMano" id="mainPlayBtn">
               <span class="ir">play</span>
             </a>
           </div>
@@ -202,29 +211,77 @@
           </div>
           <div class="section-4__body">
             <ul id="slide">
-              <li class="cont__card c1" onclick="slideDown(`c1`)">
-                <div class="cont__card__img"></div>
+              <li
+                class="cont__card c1"
+                id="c1"
+                onmouseenter="opacity0(`c1`)"
+                onmouseleave="opacity1(`c1`)"
+              >
+                <div class="cont__card-int">
+                  <div class="cont__card__img card-pos-absolute"></div>
+                  <div class="cont__card__img sec"></div>
+                </div>
                 <div class="cont__card__name"><h1>Ayoung Kim</h1></div>
               </li>
-              <li class="cont__card c2" onclick="slideDown(`c2`)">
+              <li
+                class="cont__card c2"
+                id="c2"
+                onmouseenter="opacity0(`c2`)"
+                onmouseleave="opacity1(`c2`)"
+              >
                 <div class="cont__card__name"><h1>Yi-Bool</h1></div>
-                <div class="cont__card__img"></div>
+                <div class="cont__card-int">
+                  <div class="cont__card__img card-pos-absolute"></div>
+                  <div class="cont__card__img sec"></div>
+                </div>
               </li>
-              <li class="cont__card c3" onclick="slideDown(`c3`)">
-                <div class="cont__card__img"></div>
+              <li
+                class="cont__card c3"
+                id="c3"
+                onmouseenter="opacity0(`c3`)"
+                onmouseleave="opacity1(`c3`)"
+              >
+                <div class="cont__card-int">
+                  <div class="cont__card__img card-pos-absolute"></div>
+                  <div class="cont__card__img sec"></div>
+                </div>
                 <div class="cont__card__name"><h1>Oksun Kim</h1></div>
               </li>
-              <li class="cont__card c4" onclick="slideDown(`c4`)">
+              <li
+                class="cont__card c4"
+                id="c4"
+                onmouseenter="opacity0(`c4`)"
+                onmouseleave="opacity1(`c4`)"
+              >
                 <div class="cont__card__name"><h1>Wan Lee</h1></div>
-                <div class="cont__card__img"></div>
+                <div class="cont__card-int">
+                  <div class="cont__card__img card-pos-absolute"></div>
+                  <div class="cont__card__img sec"></div>
+                </div>
               </li>
-              <li class="cont__card c5" onclick="slideDown(`c5`)">
-                <div class="cont__card__img"></div>
+              <li
+                class="cont__card c5"
+                id="c5"
+                onmouseenter="opacity0(`c5`)"
+                onmouseleave="opacity1(`c5`)"
+              >
+                <div class="cont__card-int">
+                  <div class="cont__card__img card-pos-absolute"></div>
+                  <div class="cont__card__img sec"></div>
+                </div>
                 <div class="cont__card__name"><h1>Hongsuk</h1></div>
               </li>
-              <li class="cont__card c6" onclick="slideDown(`c6`)">
+              <li
+                class="cont__card c6"
+                id="c6"
+                onmouseenter="opacity0(`c6`)"
+                onmouseleave="opacity1(`c6`)"
+              >
                 <div class="cont__card__name"><h1>Minha Park</h1></div>
-                <div class="cont__card__img"></div>
+                <div class="cont__card-int">
+                  <div class="cont__card__img card-pos-absolute"></div>
+                  <div class="cont__card__img sec"></div>
+                </div>
               </li>
             </ul>
           </div>

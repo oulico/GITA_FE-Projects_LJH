@@ -133,7 +133,7 @@ function loadFn() {
       console.log(".upBtn인가?: ", isUp);
 
       // 위 버튼 / 아래 버튼 분기하기
-      if (isUp) {
+      if (!isUp) {
         //  1. 슬라이드 top : -220px
         slide.style.top = "-220px";
         slide.style.transition = "top 1s ease-in-out";
@@ -174,30 +174,24 @@ function loadFn() {
 }
 loadFn();
 
-// const upBtn = document.querySelector(".fa-chevron-up");
-// const downBtn = document.querySelector(".fa-chevron-down");
+/////////////// sec4 마우스 오버 사진바꾸기 /////////////////////
 
-// const targetUl = document.querySelector(".slide");
+function opacity0(id) {
+  let tg = document.getElementById(id);
+  console.log(id);
+  let img = tg.querySelector(".card-pos-absolute");
+  console.log(img);
+  img.style.opacity = "0";
+  img.style.transition = "all .4s";
+}
+function opacity1(id) {
+  let tg = document.getElementById(id);
 
-// upBtn.onclick = function () {
-//   targetUl.style.top = "-220px";
-//   console.log("올라갑니다잉");
-// };
-
-// downBtn.onclick = function () {
-//   console.log("내려갑니다잉");
-//   targetUl.style.top = "220px";
-// };
-
-/////////////////////// audio player 등장 //////////////////////////
-const audioBtn = document.querySelector(".fbx");
-const audioController = document.querySelector("audio");
-
-audioBtn.addEventListener("click", function (e) {
-  audioController.play();
-  audioController.setAttribute("controls", "true");
-});
-// console.log(audioBtn);
+  let img = tg.querySelector(".card-pos-absolute");
+  console.log(img);
+  img.style.opacity = "1";
+  img.style.transition = "all .4s";
+}
 
 /////////////// 가로스크롤하기 //////////////
 
@@ -217,6 +211,7 @@ container.onmouseover = function () {
     // 스크롤 가로모드로 전환되는 동안 스크롤 방지 -- 삭제
     window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
   }
+  ``;
 };
 container.addEventListener("wheel", function (e) {
   if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
@@ -283,3 +278,28 @@ document.documentElement.style.setProperty("--data-length2_1", textLen3WPx);
 document.documentElement.style.setProperty("--data-length2_2", textLen4WPx);
 
 //
+/////////////////////// audio player 등장 //////////////////////////
+const audioBtn = document.querySelector(".fbx");
+const audioController = document.querySelector("audio");
+
+audioBtn.addEventListener("click", function (e) {
+  audioController.play();
+  audioController.setAttribute("controls", "true");
+});
+// console.log(audioBtn);
+
+////////////// 비디오 재생 ///////////////////
+
+const mainPlayBtn = document.querySelector("#mainPlayBtn");
+const videoScreen = document.querySelector(".videoScreenAbsolute");
+
+mainPlayBtn.addEventListener("click", () => {
+  console.log("clicked");
+  videoScreen.classList.add("on");
+});
+const mainCloseBtn = document.querySelector(".closeBtn");
+
+mainCloseBtn.addEventListener("click", () => {
+  console.log("clicked");
+  videoScreen.classList.remove("on");
+});

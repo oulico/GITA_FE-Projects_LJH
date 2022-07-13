@@ -9,6 +9,7 @@
 
 /* 아이콘 */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css");
 
 /* 변수 */
 :root {
@@ -215,7 +216,46 @@ section#sec2 {
     opacity: 1;
   }
 }
-/* section 3  */
+
+/* 영상 플레이 가상요소 */
+
+.videoScreenRelative {
+  position: relative;
+}
+
+.videoScreenAbsolute {
+  /* margin: var(--nav-height); */
+  /* margin: 0 auto; */
+  z-index: 99999999999999;
+  position: absolute;
+  color: white;
+  /* margin-top: var(--nav-height); */
+  left: 0;
+  height: calc(100vh - var(--nav-height));
+  width: 100%;
+  background-color: black;
+  justify-content: center;
+  top: var(--nav-height);
+  overflow: hidden;
+  display: none;
+}
+.videoScreenAbsolute.on {
+  display: flex;
+}
+.videoScreenAbsolute .closeBtn {
+  text-align: center;
+  line-height: 80px;
+  padding: 20px;
+  font-size: 50px;
+  position: absolute;
+  color: #fff;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 80px;
+}
+
+/********************************** section 3  **********************************/
 
 .section-3__heading {
   padding: 6vw;
@@ -295,19 +335,26 @@ section#sec4 {
   margin-top: 1.5vh;
   margin-bottom: 1.5vh;
 }
+.cont__card-int {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s linear;
+}
+.card-pos-absolute {
+  position: absolute;
+}
 
-.fa {
+.cursorMano.fa {
   cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
 }
 
 .cont__card__name {
-  margin: 0 40px 0;
   transition: border 0.3s;
   border-bottom: 2px solid white;
   margin: 0px 3vh 0;
 }
 .cont__card__name > h1 {
-  font-size: 148px;
   font-size: 11.5vh;
 }
 
@@ -318,84 +365,81 @@ section#sec4 {
   cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
 }
 
-.c1 > .cont__card__img {
-  width: 400px;
+.c1 .cont__card__img {
   height: 15.6vh;
   background: url(../img/art_spectrum1.jpeg) center / cover;
   transition: background-image 0.4s;
   width: 31vh;
 }
-.c1:hover > .cont__card__img {
-  width: 400px;
-  height: 200px;
-  /* 색이반고윙크 */
+
+.c1 .cont__card__img.sec {
   background: url(../img/art_spectrum1-on.jpeg) center / cover;
-  transition: background-image 0.4s;
 }
-.c2 > .cont__card__img {
+
+.c2 .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum2.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c2:hover > .cont__card__img {
+.c2 .cont__card__img.sec {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum2-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c3 > .cont__card__img {
+.c3 .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum3.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c3:hover > .cont__card__img {
+.c3 .cont__card__img.sec {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum3-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c4 > .cont__card__img {
+.c4 .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum4.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c4:hover > .cont__card__img {
+.c4 .cont__card__img.sec {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum4-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c5 > .cont__card__img {
+.c5 .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum5.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c5:hover > .cont__card__img {
+.c5 .cont__card__img.sec {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum5-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c6 > .cont__card__img {
+.c6 .cont__card__img {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
   background: url(../img/art_spectrum6.jpg) center / cover;
   transition: background-image 0.4s;
 }
-.c6:hover > .cont__card__img {
+.c6 .cont__card__img.sec {
   width: 400px;
   height: 200px;
   /* 색이반고윙크 */
@@ -439,6 +483,8 @@ section#sec4 {
   font-size: 36px;
   font-weight: 400;
 }
+
+/* 플레이 가상요소 */
 
 /** section5 ********************************/
 
