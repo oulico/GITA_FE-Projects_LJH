@@ -172,6 +172,7 @@ section.ibx.section-1 {
 }
 section#sec2 {
   height: 110vh;
+  margin-bottom: 37px;
   /* 섹션2는 다른 섹션보다 좀 더 길다 */
 }
 
@@ -309,13 +310,13 @@ section#sec3 {
 }
 .wrapperFlip.on2 .artSpec {
   transform: rotateY(90deg) scale(0.8);
-  transition: transform 1s ease-in;
+  transition: transform 0.8s ease-in;
 }
 
 .ian {
   background-color: white;
   transform: rotateY(-90deg) scale(0.8);
-  transition: transform 1s ease-in;
+  transition: transform 0.8s ease-in;
   /* display: none; */
 }
 .artSpec {
@@ -339,13 +340,13 @@ section#sec3 {
 .wrapperFlip.on3 .ian {
   visibility: visible;
   transform: rotateY(0deg) scale(0.8);
-  transition: all 1s ease-out;
+  transition: all 0.8s ease-out;
   /* 돌아감 */
 }
 .wrapperFlip.on4 .ian {
   visibility: visible;
   transform: rotateY(0deg) scale(1);
-  transition: all 1s ease-out;
+  transition: all 0.8s ease-out;
   /* 돌아감 */
 }
 

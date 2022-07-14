@@ -334,3 +334,37 @@ mainCloseBtn.addEventListener("click", () => {
 // 유튜브 영상을 쓰면서도, 스타일을 바꿀 수 있도록 했음.
 const player = new Plyr("#player");
 // plyr--paused
+
+////////////////// section 3 애니메이션 ///////////////////////////////////////
+
+const ian = document.querySelector(".ian");
+const artSpec = document.querySelector(".artSpec");
+const ianBtn = document.querySelector("#ianBtn");
+const artSpecBtn = document.querySelector("#artSpecBtn");
+const wrapperFlip = document.querySelector(".wrapperFlip");
+
+artSpecBtn.onclick = () => {
+  wrapperFlip.classList.add("on1");
+  setTimeout(() => {
+    wrapperFlip.classList.add("on2");
+    setTimeout(() => {
+      wrapperFlip.classList.add("on3");
+      setTimeout(() => {
+        wrapperFlip.classList.add("on4");
+      }, 800);
+    }, 800);
+  }, 800);
+};
+ianBtn.onclick = () => {
+  console.log("ianBtn");
+  wrapperFlip.classList.remove("on4");
+  setTimeout(() => {
+    wrapperFlip.classList.remove("on3");
+    setTimeout(() => {
+      wrapperFlip.classList.remove("on2");
+      setTimeout(() => {
+        wrapperFlip.classList.remove("on1");
+      }, 800);
+    }, 800);
+  }, 800);
+};
