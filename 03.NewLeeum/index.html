@@ -8,6 +8,8 @@
 
     <!-- 부드러운 스크롤 -->
     <script src="./js/smoothScroll20.js"></script>
+    <!-- plyr (동영상 플레이어) -->
+    <script src="./js/plyr.min.js"></script>
   </head>
 
   <!-- 
@@ -38,13 +40,16 @@
       <header class="top">
         <div class="top__title">
           <div class="top__title__videoFBox videoScreenAbsolute">
-            <iframe
-              height="100%"
-              src="https://www.youtube.com/embed/bkLSBqmDS3U?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;controls=0"
-              sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
-              width="80%"
-            >
-            </iframe>
+            <div class="plyr__video-embed" id="player">
+              <iframe
+                height="100%"
+                src="https://www.youtube.com/embed/bkLSBqmDS3U?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;controls=0"
+                sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"
+                width="80%"
+              >
+              </iframe>
+            </div>
+
             <div class="closeBtn">
               <i class="fa fa-window-close cursorMano"></i>
             </div>
@@ -167,38 +172,82 @@
         </section>
 
         <section id="sec3" class="ibx slideUp section-3">
-          <div class="section-3__heading">
-            <span>
-              <h3>ART SPECTRUM<br />2022</h3>
-              <h2>전시개요</h2>
-            </span>
-          </div>
-          <div class="section-3__body">
-            <span>
-              <h3>
-                아트스펙트럼은 2001년 호암갤러리에서 격년제 청년작가 서베이
-                전시로 처음 시작되습니다. 이후 2003년 호암갤러리의 마지막 전시로
-                개최하였으며, 2006년부터 리움에서 아트스펙트럼 전시를 이어서
-                진행하고 있습니다. 2012년까지는 리움 큐레이터만이 작가를
-                추천하였으나, 2014년부터는 보다 다양한 시각을 반영하기 위해 리움
-                큐레이터 뿐 아니라 외부 평론가와 큐레이터에게 작가 선정을
-                의뢰하기 시작했습니다. 또한 열린 추천으로 더욱 다양해진 작가들의
-                창작 의지를 고취시기기위해 별도의 심사위원단이 작가 중 1인을
-                선정하여 작가상을 시상하였습니다. 2022년 아트스펙트럼 전시는
-                내외부 추천위원이 작가를 추천하였고, 전시 기간 중 심사위원단이
-                작가상 수상자를 선정할 예정입니다.
-              </h3>
+          <div class="wrapperFlip">
+            <div class="ian">
+              <div class="section-3__heading">
+                <span>
+                  <h3>이안쳉:세계건설</h3>
+                  <h2>전시개요</h2>
+                </span>
+                <span>
+                  <h3>ART SPECTRUM<br />2022</h3>
+                  <h2>전시개요</h2>
+                </span>
+              </div>
+              <div class="section-3__body">
+                <span class="cursorMano">
+                  <h3>
+                    <!-- 아이콘 -->
+                    <i class="fa fa-angle-double-left"></i> 다른 전시 보기
+                  </h3>
+                </span>
+                <span>
+                  <h3>
+                   작가의 주요 작품을 모두 망라한 이번 전시는 비디오게임 엔진을 사용해 개발된 라이브 시뮬레이션 작업인&lt;사절(Emissaries) &gt; 삼부작(2015-2017)과 시뮬레이션 속에 사는 생각과 감정을 가진 인공 생명체 &lt;BOB(Bag of Beliefs)&gt;(2018-2019), 그리고 작가의 인간 의식에 대한 탐구와 SF적 상상력을 유감없이 보여주는 최신작 &lt;BOB 이후의 삶(Life After BOB)&gt;(2021)으로 이루어져 있습니다. 작가가 “영원히 반복해서 스스로 플레이 되는 비디오게임”이라고 부르는 <사절> 삼부작은 고대에서부터 미래에 이르기까지 인간 인식의 진화 과정에 대한 작가의 상상력을 보여줍니다.
+                  </h3>
+                  <h3>
+                   뱀의 형상을 한 인공 생명체 BOB은 한 사람에게 여러가지 모습이 있고 상황에 따라서 다른 면이 튀어나오는 것처럼 여러 종류의 인공지능으로 이루어져 있습니다. 각각의 인공지능은 주도권을 잡기 위해 경쟁하면서 인간의 의식이 작동하는 방식을 구현합니다. 관람자는 BOB 앱을 다운받아서 마치 부모가 자식에게 가치관을 가르치고 성향을 물려주듯이 BOB의 성격 형성에 영향을 미칠 수 있습니다. 마지막으로 &lt;BOB 이후의 삶(Life After BOB)&gt;은 “인공지능이 나보다 내 삶을 더 잘 살아낼 수 있다면?”이라는 질문을 던지는 애니메이션 작품으로, 2부로 이루어져 있습니다. 작품의 주인공 찰리스는 신경계에 인공지능 BOB이 이식된 소녀로, BOB은 순간마다 최적의 인생 경로를 시뮬레이션 하면서 찰리스가 그에 부합하는 선택을 하도록 유도합니다. 관람자는 1부에서 애니메이션을 감상하고 2부에서 인터랙티브 기능을 사용해 작가가 영상 속에 구현한 세계를 자세히 살펴볼 수 있습니다.
+                  </h3>
+                </span>
+              </div>
+            </div>
 
-              <h3>
-                아트스펙트럼의 20년 역사 동안 한국 현대미술계는 급격히
-                변화하였습니다. 회화나 조각 같은 전통 장르를 넘어 영상과 설치가
-                주류를 이루는가 하면, 퍼포먼스와 관객 참여 같은 새로운 접근도
-                일상화 되었습니다. 국내외에서 수학한 젊은 작가들은 다양한 시도로
-                장르의 범위를 넘나들고, 전시 관람의 형태를 다양화하며 미술의
-                영역을 넓혀 나갔으며, 세대, 젠더 같은 새로운 구분을 통해 이전
-                시대와 차별화되는 작가 정체성을 확립해가고 있습니다.
-              </h3>
-            </span>
+            <div class="artSpec">
+              <div class="section-3__heading">
+                <span>
+                  <h3>ART SPECTRUM<br />2022</h3>
+                  <h2>전시개요</h2>
+                </span>
+                <span>
+                   <h3>이안쳉:세계건설</h3>
+                  <h2>전시개요</h2>
+                </span>
+              </div>
+              <div class="section-3__body">
+                <span class="cursorMano">
+                  <h3>
+                    <!-- 아이콘 -->
+                    <i class="fa fa-angle-double-left"></i> 다른 전시 보기
+                  </h3>
+                </span>
+               <span>
+                  <h3>
+                    아트스펙트럼은 2001년 호암갤러리에서 격년제 청년작가 서베이
+                    전시로 처음 시작되었습니다. 이후 2003년 호암갤러리의 마지막
+                    전시로 개최하였으며, 2006년부터 리움에서 아트스펙트럼 전시를
+                    이어서 진행하고 있습니다. 2012년까지는 리움 큐레이터만이
+                    작가를 추천하였으나, 2014년부터는 보다 다양한 시각을 반영하기
+                    위해 리움 큐레이터 뿐 아니라 외부 평론가와 큐레이터에게 작가
+                    선정을 의뢰하기 시작했습니다. 또한 열린 추천으로 더욱 다양해진
+                    작가들의 창작 의지를 고취시기기위해 별도의 심사위원단이 작가
+                    중 1인을 선정하여 작가상을 시상하였습니다. 2022년 아트스펙트럼
+                    전시는 내외부 추천위원이 작가를 추천하였고, 전시 기간 중
+                    심사위원단이 작가상 수상자를 선정할 예정입니다.
+                  </h3>
+                  <h3>
+                    아트스펙트럼의 20년 역사 동안 한국 현대미술계는 급격히
+                    변화하였습니다. 회화나 조각 같은 전통 장르를 넘어 영상과
+                    설치가 주류를 이루는가 하면, 퍼포먼스와 관객 참여 같은 새로운
+                    접근도 일상화 되었습니다. 국내외에서 수학한 젊은 작가들은
+                    다양한 시도로 장르의 범위를 넘나들고, 전시 관람의 형태를
+                    다양화하며 미술의 영역을 넓혀 나갔으며, 세대, 젠더 같은 새로운
+                    구분을 통해 이전 시대와 차별화되는 작가 정체성을 확립해가고
+                    있습니다.
+                  </h3>
+                </span>
+              </div>
+            </div>
+            </div>
           </div>
         </section>
         <!-- 작가 섹션 -->

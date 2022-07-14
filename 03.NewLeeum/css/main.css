@@ -6,6 +6,7 @@
 @import url(./common.css);
 @import url(./core.css);
 @import url(./media.css);
+@import url(./plyr.css);
 
 /* 아이콘 */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
@@ -257,18 +258,100 @@ section#sec2 {
 
 /********************************** section 3  **********************************/
 
+section#sec3 {
+}
 .section-3__heading {
   padding: 6vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-3__heading span:nth-of-type(2) {
+  transform: scaleX(-1);
+  filter: blur(5px);
 }
 
 .section-3__body {
-  width: 50vw;
-  float: right;
-  text-indent: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 6vw;
   padding-right: 6vw;
   padding-bottom: 20px;
 }
 
+.section-3__body span {
+  display: block;
+  width: 50%;
+}
+
+.section-3__body > span:nth-child(2) h3 {
+  text-indent: 40px;
+}
+.section-3__body:nth-of-type(2) span {
+}
+/* 뒤집기 애니매이션 */
+
+.wrapperFlip {
+  position: relative;
+  /* transition: transform 0.8s ease-in-out; */
+}
+
+/* 첫단계:  */
+
+.wrapperFlip .artSpec {
+  transform: scale(1);
+  transition: transform 0.8s ease-out;
+}
+.wrapperFlip.on1 .artSpec {
+  transform: scale(0.8);
+  transition: transform 0.8s ease-out;
+  /* enlfhrkrl */
+}
+.wrapperFlip.on2 .artSpec {
+  transform: rotateY(90deg) scale(0.8);
+  transition: transform 1s ease-in;
+}
+
+.ian {
+  background-color: white;
+  transform: rotateY(-90deg) scale(0.8);
+  transition: transform 1s ease-in;
+  /* display: none; */
+}
+.artSpec {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+/* .wrapperFlip.on1 .Flip1 {
+  transform: perspective(46px) translateZ(-30px);
+  transition: transform 0.8s ease-in-out;
+   뒤로 이동 
+} */
+.wrapperFlip.on3 .artSpec {
+  visibility: hidden;
+}
+
+.wrapperFlip.on3 .ian {
+  visibility: visible;
+  transform: rotateY(0deg) scale(0.8);
+  transition: all 1s ease-out;
+  /* 돌아감 */
+}
+.wrapperFlip.on4 .ian {
+  visibility: visible;
+  transform: rotateY(0deg) scale(1);
+  transition: all 1s ease-out;
+  /* 돌아감 */
+}
+
+/* .heading2 {
+  position: absolute;
+} */
 /* section 4 ******************** */
 
 .section-4__chevron {

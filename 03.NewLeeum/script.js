@@ -315,6 +315,7 @@ audioBtn.addEventListener("click", function (e) {
 
 const mainPlayBtn = document.querySelector("#mainPlayBtn");
 const videoScreen = document.querySelector(".videoScreenAbsolute");
+const pauseExitBtn = document.getElementById("player");
 
 mainPlayBtn.addEventListener("click", () => {
   console.log("clicked");
@@ -324,5 +325,12 @@ const mainCloseBtn = document.querySelector(".closeBtn");
 
 mainCloseBtn.addEventListener("click", () => {
   console.log("clicked");
+  pauseExitBtn.click(); //창을 닫으면 영상도 멈춘다.
+
   videoScreen.classList.remove("on");
 });
+
+///////////////////////////// 동영상 플레이어 /////////////////////////////
+// 유튜브 영상을 쓰면서도, 스타일을 바꿀 수 있도록 했음.
+const player = new Plyr("#player");
+// plyr--paused
