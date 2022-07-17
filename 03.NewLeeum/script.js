@@ -1,3 +1,64 @@
+///////////////////////////// video lnks/////////////
+const videoList = [
+  `<iframe
+    width="80%"
+    height="100%"
+    preload="auto"
+    src="https://www.youtube.com/embed/_FkdJy-7S_k?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`,
+  `<iframe
+    width="80%"
+    height="100%"
+    src="https://www.youtube.com/embed/D-38BwYMz2Q?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`,
+  `<iframe
+    width="80%"
+    height="100%"
+    src="https://www.youtube.com/embed/bSIvzbaQ9EU?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`,
+  `<iframe
+    width="80%"
+    height="100%"
+    src="https://www.youtube.com/embed/FzA90Her2AU?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`,
+  `<iframe
+    width="80%"
+    height="100%"
+    src="https://www.youtube.com/embed/5bmZaF56xfM?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`,
+  `<iframe
+    width="80%"
+    height="100%"
+    src="https://www.youtube.com/embed/Z64JhAqwRfE?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`,
+];
+
+//////////////////////////////////////////////////////
+
 const slidePosistion = [];
 // 위치값 저장할 변수
 
@@ -178,9 +239,9 @@ loadFn();
 
 function opacity0(id) {
   let tg = document.getElementById(id);
-  console.log(id);
+  // console.log(id);
   let img = tg.querySelector(".card-pos-absolute");
-  console.log(img);
+  // console.log(img);
   img.style.opacity = "0";
   img.style.transition = "all .4s";
 }
@@ -188,7 +249,7 @@ function opacity1(id) {
   let tg = document.getElementById(id);
 
   let img = tg.querySelector(".card-pos-absolute");
-  console.log(img);
+  // console.log(img);
   img.style.opacity = "1";
   img.style.transition = "all .4s";
 }
@@ -310,29 +371,158 @@ audioBtn.addEventListener("click", function (e) {
   audioController.setAttribute("controls", "true");
 });
 // console.log(audioBtn);
+/////////////////////// video list 등장 /////////////////////////
+
+const moreBtn = document.getElementById("moreBtn");
+const videoListCover = document.querySelector(".revealVideos");
+
+moreBtn.onclick = function () {
+  videoListCover.classList.toggle("on");
+};
+
+/////////////// 작가 비디오 재생 ////////////
+// TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// const authorName = document.querySelectorAll(".cont__card");
+// console.log(authorName);
+// console.log(`authorName`, authorName[0]);
+
+const authorPlay = document.querySelector(".authorScreenAbsolute");
+// const authorCloseBtn = document.getElementById("authorCloseBtn");
+const player2 = document.querySelectorAll(".player2");
+// const contCard = document.querySelectorAll(".cont__card");
+
+// player2.forEach((ele, idx) => {
+//   ele.style.display = "none";
+
+//   ele.addEventListener("click", () => {
+//     console.log("click", idx);
+//   });
+// });
+let nthVid;
+function showVid(id) {
+  nthVid = document.getElementById(id);
+  // nthVid.style.display = "block";
+  nthVid.classList.add("on");
+  preventClick.style.display = "block";
+}
+const authorCloseBtn = document.querySelectorAll(".authorCloseBtn");
+const preventClick = document.querySelector(".preventClick");
+console.log(`preventClick`, preventClick);
+
+console.log(`authoCloseBtn`, authorCloseBtn);
+
+authorCloseBtn.forEach((ele) => {
+  ele.addEventListener("click", () => {
+    console.log("clicked");
+    console.log(nthVid);
+    nthVid.classList.remove("on");
+    preventClick.style.display = "none";
+    if (nthVid.querySelector(".plyr").classList.contains("plyr--playing")) {
+      console.log("playing");
+      nthVid.querySelector(".plyr").click();
+    }
+  });
+});
+
+// if (player2.classList.contains("plyr--playing")) {
+//   player2.click(); //창을 닫으면 영상도 멈춘다.
+// }
+
+// contCard.forEach((ele) => {
+//   ele.addEventListener("mouseenter", opacity0(vid));
+//   ele.addEventListener("mouseleave", opacity1(vid));
+// });
+
+// const vid = [];
+
+// authorName.forEach((ele, idx, array) => {
+
+//   ele[idx].innerHTML = videoList[idx]
+// console.log(ele);
+// console.log(idx);
+// console.log(array);
+// console.log(`contCard`, contCardNum);
+
+// vid.push(contCardNum[idx].getAttribute("id"));
+// console.log(`vd`, vid);
+
+// player2.innerHTML = videoList[idx];
+
+// ele.addEventListener("click", () => {
+//   console.log(idx);
+
+// contCard.forEach(function (ele, idx) {
+//   ele.addEventListener("click", (idx) => {
+//     player2[idx].style.display = "block";
+//     authorPlay.classList.add("on");
+//   });
+// });
+//   ele.addEventListener("click", () => {
+//     player2.innerHTML = videoList[idx];
+//     setTimeout(() => {
+//       authorPlay.classList.add("on");
+//     }, 500);
+//   });
+// });
+
+// contCard[0].addEventListener("click", () => {
+//   authorPlay.classList.add("on");
+// });
+
+//   });
+// });
+
+// authorCloseBtn.addEventListener("click", () => {
+//   if (player2.classList.contains("plyr--playing")) {
+//     player2.click();
+//   }
+//   authorPlay.classList.remove("on");
+// });
+
+// mainCloseBtn.addEventListener("click", () => {
+//   console.log("clicked");
+//   if (pauseExitBtn.classList.contains("plyr--playing")) {
+//     pauseExitBtn.click(); //창을 닫으면 영상도 멈춘다.
+//   }
+
+//   videoScreen.classList.remove("on");
+// });
+//   this.classList.add("authorPlayBtn");
+//   const authorPlayBtn = document.querySelector(".authorPlayBtn");
+//   authorPlayBtn.addEventListener("click", () => {
+//     console.log("clicked");
+//     authorScreen.classList.add("on");
+//   });
+
+// const authorScreen = document.querySelector(".authorScreenAbsolute");
 
 ////////////// 비디오 재생 ///////////////////
 
 const mainPlayBtn = document.querySelector("#mainPlayBtn");
 const videoScreen = document.querySelector(".videoScreenAbsolute");
 const pauseExitBtn = document.getElementById("player");
+const mainCloseBtn = document.getElementById("ianCloseBtn");
 
 mainPlayBtn.addEventListener("click", () => {
   console.log("clicked");
   videoScreen.classList.add("on");
 });
-const mainCloseBtn = document.querySelector(".closeBtn");
 
 mainCloseBtn.addEventListener("click", () => {
   console.log("clicked");
-  pauseExitBtn.click(); //창을 닫으면 영상도 멈춘다.
+  if (pauseExitBtn.classList.contains("plyr--playing")) {
+    pauseExitBtn.click(); //창을 닫으면 영상도 멈춘다.
+  }
 
   videoScreen.classList.remove("on");
 });
 
+// plyr--playing div#player
 ///////////////////////////// 동영상 플레이어 /////////////////////////////
 // 유튜브 영상을 쓰면서도, 스타일을 바꿀 수 있도록 했음.
-const player = new Plyr("#player");
+// const player = new Plyr(".player");
+const players = Plyr.setup(".player");
+
 // plyr--paused
 
 ////////////////// section 3 애니메이션 ///////////////////////////////////////
@@ -368,3 +558,7 @@ ianBtn.onclick = () => {
     }, 800);
   }, 800);
 };
+
+//////////////// 작가 사진 바꾸기 /////////////////
+// const authorPicture = document.querySelectorAll('')
+///////////////////////////////////////////////////

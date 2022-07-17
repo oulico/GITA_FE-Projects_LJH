@@ -42,7 +42,7 @@ html {
   line-height: 1.7;
   line-height: var(--plyr-line-height, 1.7);
   max-width: 100%;
-  min-width: 200px;
+  min-width: 100%;
   position: relative;
   text-shadow: none;
   transition: box-shadow 0.3s ease;
@@ -1609,6 +1609,14 @@ div#player {
   height: 100%;
   width: 75%;
 }
+#player2 {
+  height: 100%;
+  width: 100%;
+}
+#player2 .plyr__controls {
+  margin-bottom: 0;
+}
+
 button.plyr__control.plyr__control--overlaid {
   border: solid 7px whitesmoke;
 }
@@ -1627,11 +1635,31 @@ button.plyr__control.plyr__control--overlaid {
 
   /* text-align: center; */
 }
+#player2 button.plyr__control.plyr__control--overlaid {
+  /* background: red; */
+  width: 113px;
+  height: 113px;
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
+  /* text-align: center; */
+}
 
 button.plyr__control.plyr__control--overlaid::before {
   position: absolute;
   width: 185px;
   height: 185px;
+  background: url(../img/svg/leeum.jpg);
+  background-size: cover;
+  content: "";
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  -webkit-animation: spinX 6s linear infinite;
+  animation: spinX 6s linear infinite;
+}
+#player2 button.plyr__control.plyr__control--overlaid::before {
+  position: absolute;
+  width: 100px;
+  height: 100px;
   background: url(../img/svg/leeum.jpg);
   background-size: cover;
   content: "";

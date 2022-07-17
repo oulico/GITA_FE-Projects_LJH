@@ -219,19 +219,17 @@ section#sec2 {
   }
 }
 
-/* 영상 플레이 가상요소 */
+/* 영상 플레이 창 */
 
 .videoScreenRelative {
   position: relative;
 }
 
 .videoScreenAbsolute {
-  /* margin: var(--nav-height); */
-  /* margin: 0 auto; */
   z-index: 99999999999999;
   position: absolute;
   color: white;
-  /* margin-top: var(--nav-height); */
+
   left: 0;
   height: calc(100vh - var(--nav-height));
   width: 100%;
@@ -244,7 +242,7 @@ section#sec2 {
 .videoScreenAbsolute.on {
   display: flex;
 }
-.videoScreenAbsolute .closeBtn {
+.closeBtn {
   text-align: center;
   line-height: 80px;
   padding: 20px;
@@ -373,6 +371,7 @@ section#sec3 {
 
 section#sec4 {
   margin: 5vh 0 5vh;
+  position: relative;
 }
 .section-4__heading {
   padding: 6vw 6vw 0vw 6vw;
@@ -530,6 +529,41 @@ section#sec4 {
   background: url(../img/art_spectrum6-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
+.player2 {
+  width: 100%;
+  height: 100%;
+}
+
+.authorScreenAbsolute {
+  background-color: black;
+  z-index: 99999999999999;
+  position: absolute;
+  color: white;
+  justify-content: center;
+  overflow: hidden;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 600px;
+}
+.section-4 .preventClick {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  display: none;
+  z-index: 9999999999995;
+}
+
+.authorScreenAbsolute.on {
+  display: flex;
+}
 
 /* 슬라이딩 설명 */
 
@@ -673,7 +707,7 @@ section#sec4 {
 .fbx {
   width: 100%;
   overflow: hidden;
-  height: 45vh;
+  height: 13rem;
   position: relative;
 }
 .fbx:hover * {
@@ -682,7 +716,7 @@ section#sec4 {
 
 .tbx {
   position: absolute;
-  height: 15vh;
+  height: 5rem;
   white-space: nowrap;
   margin-bottom: 50px;
 }
@@ -699,6 +733,10 @@ section#sec4 {
   transition: translateX;
 }
 
+.fbx h1 {
+  font-size: 5rem;
+}
+
 audio {
   width: 100%;
 }
@@ -712,6 +750,52 @@ audio::-webkit-media-controls-panel {
 .articleSection {
   padding-top: 8%;
   width: 50%;
+}
+span#moreBtn {
+  float: right;
+}
+.videosGrid {
+  align-items: center;
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset,
+    rgb(0 0 0 / 30%) 0px 18px 36px -18px inset;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18%, auto));
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+  position: relative;
+  align-content: space-evenly;
+  justify-content: space-around;
+  justify-items: center;
+}
+.revealVideos {
+  height: 440px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: top 0.4s ease-in-out;
+  background-color: white;
+}
+.revealVideos.on {
+  top: -100%;
+  transition: top 0.4s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.item {
+  overflow: hidden;
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 15px;
+  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
+    rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+}
+.item .i1 {
 }
 
 /* section 7 *******************/
