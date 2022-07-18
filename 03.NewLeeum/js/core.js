@@ -20,8 +20,3 @@ window.addEventListener("DOMContentLoaded", () => {
     lastScrollY = window.scrollY;
   });
 });
-
-function searchBar() {
-  const target = document.querySelector(".sns > li:last-child");
-  target.classList.toggle("on");
-}

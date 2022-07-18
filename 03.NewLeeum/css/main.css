@@ -7,6 +7,7 @@
 @import url(./core.css);
 @import url(./media.css);
 @import url(./plyr.css);
+@import url(./mediaQuery.css);
 
 /* 아이콘 */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
@@ -448,6 +449,29 @@ section#sec4 {
   width: 31vh;
 }
 
+.cont__card__img.card-pos-absolute {
+  opacity: 0;
+  animation: none;
+}
+@keyframes queryAni {
+  5% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .c1 .cont__card__img {
   /* height: 15.6vh; */
   background: url(../img/art_spectrum1.jpeg) center / cover;
@@ -751,7 +775,12 @@ audio::-webkit-media-controls-panel {
   width: 50%;
 }
 span#moreBtn {
-  float: right;
+  display: flex;
+  width: 100vh;
+  height: 100px;
+
+  align-content: center;
+  justify-content: center;
 }
 .videosGrid {
   align-items: center;
@@ -807,6 +836,7 @@ span#moreBtn {
 .section-7__body {
   width: 100%;
   margin: 0 auto;
+  display: auto;
 }
 .section-7__body p {
   width: 520px;
@@ -814,6 +844,7 @@ span#moreBtn {
   transform: translateX(-50%);
   position: absolute;
   left: 50%;
+  order: 4;
 }
 .section-7__body p {
   text-align: justify;
@@ -823,6 +854,7 @@ span#moreBtn {
   position: absolute;
 }
 .section-7.on .section-7__body div:nth-of-type(1) {
+  order: 1;
   top: 20%;
   left: 50%;
   width: 15vw;
@@ -832,6 +864,7 @@ span#moreBtn {
   animation: spreadPicture 0.8s ease-out 0s forwards;
 }
 .section-7.on .section-7__body div:nth-of-type(2) {
+  order: 2;
   top: 30%;
   left: 80%;
   width: 15vw;
@@ -841,6 +874,7 @@ span#moreBtn {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(3) {
+  order: 3;
   top: 30%;
   left: 20%;
   width: 15vw;
@@ -850,6 +884,7 @@ span#moreBtn {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(4) {
+  order: 5;
   top: 80%;
   left: 50%;
   transform: translate(-50%);
@@ -860,6 +895,7 @@ span#moreBtn {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(5) {
+  order: 6;
   top: 70%;
   left: 80%;
   width: 15vw;
@@ -869,6 +905,7 @@ span#moreBtn {
   transform: translateX(-50%);
 }
 .section-7.on .section-7__body div:nth-of-type(6) {
+  order: 7;
   top: 70%;
   left: 20%;
   width: 15vw;

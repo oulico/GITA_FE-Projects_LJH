@@ -6,9 +6,7 @@
     <title>Leeum</title>
     <link rel="stylesheet" href="./css/membership.css" />
 
-    <!-- 부드러운 스크롤 -->
-    <script src="./js/smoothScroll20.js"></script>
-    <!-- plyr (동영상 플레이어) -->
+
     <script src="./js/plyr.min.js"></script>
     <script src="./js/core.js"></script>
   </head>
@@ -65,10 +63,10 @@
                   ></a
                 >
               </li>
-              <li onclick="search()">
+              <li id="searchBar">
                 <span class="ir">검색</span>
               </li>
-              <li>
+              <li id="searchBlank" class="on">
                 <input type="text" placeholder="Search.." />
               </li>
             </ol>
@@ -172,6 +170,7 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+        <script src="./js/searchBar.js"></script>
   </body>
 </html>

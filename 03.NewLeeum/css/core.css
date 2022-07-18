@@ -82,8 +82,8 @@ input:focus {
 
 /* 검색 버튼 클릭시 인풋창 등장 */
 
-.sns li:last-child {
-  width: 0;
+html .sns > li:last-child {
+  width: 150px;
   height: 15px;
   vertical-align: middle;
   border-bottom: 2px solid var(--color-black);
@@ -91,8 +91,8 @@ input:focus {
   overflow: hidden;
 }
 
-li.on {
-  width: 150px !important;
+html .sns > li:last-child.on {
+  width: 0px;
 }
 /* todo: important 안쓰는 법을 강구할 것 */
 

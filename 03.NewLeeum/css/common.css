@@ -94,7 +94,8 @@ aside ol li {
 }
 
 .gnb ul {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* .gnb {
