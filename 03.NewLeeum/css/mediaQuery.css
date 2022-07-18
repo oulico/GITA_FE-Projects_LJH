@@ -29,6 +29,12 @@
     width: 100%;
     object-fit: none;
   }
+  body .section-3__heading {
+    padding: 6vw;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 200px;
+  }
   body .section-3__body span {
     display: block;
     width: auto;
@@ -40,6 +46,9 @@
     padding-right: 6vw;
     padding-bottom: 20px;
     flex-direction: column;
+  }
+  body .section-4__heading {
+    padding: 200px 6vw 0vw 6vw;
   }
 
   body .section-4__body {
@@ -94,6 +103,9 @@
     opacity: 0;
     animation: queryAni 20s linear 5s infinite normal;
   }
+  body .section-5__heading {
+    padding: 200px 6vw 0vw 6vw;
+  }
   body .section-5__body__box.sec5intro {
     width: 85vw;
     /* font-size: 64px; */
@@ -118,6 +130,10 @@
     text-align: justify;
     vertical-align: bottom;
   }
+  body .section-6__heading {
+    padding: 200px 6vw 0vw 6vw;
+  }
+
   span#moreBtn {
     float: auto;
   }
@@ -185,7 +201,7 @@
   body .section-7__body p {
     order: 4 !important;
     text-align: center;
-    width: 900px;
+    width: 90vw;
     height: 200px;
     transform: translateX(0%);
     position: static;
@@ -198,7 +214,7 @@
     order: 1 !important;
     background: url(../img/sample_45.png) no-repeat 0 / cover;
     animation: none;
-    width: 300px !important;
+    width: 30vw !important;
     height: 200px !important;
     transform: translateX(0%) !important;
     position: static;
@@ -207,7 +223,7 @@
     order: 2 !important;
     background: url(../img/sample_47.png) no-repeat 0 / cover;
     animation: none;
-    width: 300px !important;
+    width: 30vw !important;
     height: 200px !important;
     transform: translateX(0%) !important;
     position: static;
@@ -216,7 +232,7 @@
     order: 3 !important;
     background: url(../img/sample_49.png) no-repeat 0 / cover;
     animation: none;
-    width: 300px !important;
+    width: 30vw !important;
     height: 200px !important;
     transform: translateX(0%) !important;
     position: static;
@@ -227,7 +243,7 @@
     background: url(../img/M1_ex2.jpeg) no-repeat 0 / cover;
     animation: none;
     transform: translateX(0%);
-    width: 300px !important;
+    width: 30vw !important;
     height: 200px !important;
     transform: translateX(0%) !important;
     position: static;
@@ -238,7 +254,7 @@
     background: url(../img/M2_ex2.jpeg) no-repeat 0 / cover;
     animation: none;
     transform: translateX(0%);
-    width: 300px !important;
+    width: 30vw !important;
     height: 200px !important;
     transform: translateX(0%) !important;
     position: static;
@@ -247,7 +263,7 @@
     order: 7 !important;
     background: url(../img/M3_ex2.jpeg) no-repeat 0 / cover;
     animation: none;
-    width: 300px !important;
+    width: 30vw !important;
     height: 200px !important;
     transform: translateX(0%) !important;
     position: static;
