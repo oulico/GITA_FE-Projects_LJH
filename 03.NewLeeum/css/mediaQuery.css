@@ -252,4 +252,21 @@
     transform: translateX(0%) !important;
     position: static;
   }
+
+  /* tickets */
+  body .ibx2 {
+    /* width: 450px; */
+    height: 1170px;
+    margin-top: calc(var(--nav-height) * 3);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #cont2 {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
+
+/* /////// main 945px  끝 //////// */

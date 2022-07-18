@@ -1,6 +1,7 @@
 @import url(../css/common.css);
 @import url(../css/core.css);
 @import url(../css/reset.css);
+@import url(../css/mediaQuery.css);
 
 .ibx2 {
   /* width: 450px; */
