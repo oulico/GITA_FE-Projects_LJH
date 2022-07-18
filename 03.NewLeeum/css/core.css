@@ -106,7 +106,7 @@ li.on {
   z-index: 999999;
   background-color: rgb(243, 243, 243);
 }
-.top__title::after .on {
+/* .top__title::after .on {
   content: "✕";
   position: fixed;
   color: white;
@@ -114,8 +114,7 @@ li.on {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var();
-}
+} */
 /* 플로팅 버튼 */
 .top {
   position: relative;

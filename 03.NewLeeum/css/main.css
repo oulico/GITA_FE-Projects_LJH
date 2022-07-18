@@ -131,9 +131,10 @@ video {
   object-fit: cover;
 }
 
-/* body * {
-  outline: red 1px solid;
-} */
+body {
+  /* outline: red 1px solid;
+  max-width: 1920px; */
+}
 
 section h1 {
   line-height: 1;
@@ -257,8 +258,6 @@ section#sec2 {
 
 /********************************** section 3  **********************************/
 
-section#sec3 {
-}
 .section-3__heading {
   padding: 6vw;
   display: flex;
@@ -286,8 +285,7 @@ section#sec3 {
 .section-3__body > span:nth-child(2) h3 {
   text-indent: 40px;
 }
-.section-3__body:nth-of-type(2) span {
-}
+
 /* 뒤집기 애니매이션 */
 
 .wrapperFlip {
@@ -411,9 +409,6 @@ section#sec4 {
   flex-shrink: 0;
   justify-content: space-evenly;
   align-items: center;
-  height: 200px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   height: 15.5vh;
   margin-top: 1.5vh;
   margin-bottom: 1.5vh;
@@ -428,8 +423,8 @@ section#sec4 {
   position: absolute;
 }
 
-.cursorMano.fa {
-  cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
+.cursorMano {
+  cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 0, pointer;
 }
 
 .cont__card__name {
@@ -448,11 +443,15 @@ section#sec4 {
   cursor: url(../img/svg/64px-Mano_cursor.svg.png) 24 16, pointer;
 }
 
-.c1 .cont__card__img {
+.cont__card__img {
   height: 15.6vh;
+  width: 31vh;
+}
+
+.c1 .cont__card__img {
+  /* height: 15.6vh; */
   background: url(../img/art_spectrum1.jpeg) center / cover;
   transition: background-image 0.4s;
-  width: 31vh;
 }
 
 .c1 .cont__card__img.sec {
@@ -460,78 +459,78 @@ section#sec4 {
 }
 
 .c2 .cont__card__img {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum2.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c2 .cont__card__img.sec {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum2-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c3 .cont__card__img {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum3.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c3 .cont__card__img.sec {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum3-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c4 .cont__card__img {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum4.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c4 .cont__card__img.sec {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum4-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c5 .cont__card__img {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum5.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c5 .cont__card__img.sec {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum5-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c6 .cont__card__img {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum6.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .c6 .cont__card__img.sec {
-  width: 400px;
-  height: 200px;
+  /* width: 400px;
+  height: 200px; */
   /* 색이반고윙크 */
   background: url(../img/art_spectrum6-on.jpg) center / cover;
   transition: background-image 0.4s;
 }
 .player2 {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 }
 
 .authorScreenAbsolute {
@@ -550,13 +549,13 @@ section#sec4 {
 }
 .section-4 .preventClick {
   position: absolute;
-  filter: blur(12px);
+
   top: 0;
   left: 0;
-  background-color: transparent;
   height: 100%;
   width: 100%;
-  opacity: 1;
+  background-color: black;
+  opacity: 0;
   display: none;
   z-index: 9999999999995;
 }
@@ -723,13 +722,13 @@ section#sec4 {
 .tbx.slideLeft {
   top: 5px;
   left: var(--data-length1_1);
-  animation: txtFlow1 10s linear infinite;
+  animation: txtFlow1 20s linear infinite;
   transition: translateX;
 }
 .tbx.slideRight {
   bottom: 5px;
   left: var(--data-length2_1);
-  animation: txtFlow2 10s linear infinite;
+  animation: txtFlow2 20s linear infinite;
   transition: translateX;
 }
 
@@ -761,14 +760,13 @@ span#moreBtn {
   background-color: white;
   box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset,
     rgb(0 0 0 / 30%) 0px 18px 36px -18px inset;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18%, auto));
-  grid-template-rows: 1fr 1fr;
-  gap: 10px 10px;
+  display: flex;
+
   position: relative;
   align-content: space-evenly;
   justify-content: space-around;
   justify-items: center;
+  flex-wrap: wrap;
 }
 .revealVideos {
   height: 500px;
@@ -787,17 +785,15 @@ span#moreBtn {
 }
 
 .item {
+  margin-bottom: 10px;
   overflow: hidden;
   display: flex;
-  height: 190px;
-  width: 17vw;
+  width: 18vw;
+  height: 9vw;
   border-radius: 27px;
   box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
     rgb(60 64 67 / 15%) 0px 2px 6px 2px;
   align-items: center;
-}
-
-.item .i1 {
 }
 
 /* section 7 *******************/

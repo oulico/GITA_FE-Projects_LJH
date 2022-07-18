@@ -16,6 +16,10 @@ ol {
   margin: 0;
   padding: 0;
 }
+/* 가로스크롤바 없애기 */
+html {
+  overflow-x: hidden;
+}
 
 /* address 기울임 없애기 */
 address {

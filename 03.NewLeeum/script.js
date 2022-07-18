@@ -1,95 +1,12 @@
-///////////////////////////// video lnks/////////////
-const videoList = [
-  `<iframe
-    width="80%"
-    height="100%"
-    preload="auto"
-    src="https://www.youtube.com/embed/_FkdJy-7S_k?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`,
-  `<iframe
-    width="80%"
-    height="100%"
-    src="https://www.youtube.com/embed/D-38BwYMz2Q?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`,
-  `<iframe
-    width="80%"
-    height="100%"
-    src="https://www.youtube.com/embed/bSIvzbaQ9EU?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`,
-  `<iframe
-    width="80%"
-    height="100%"
-    src="https://www.youtube.com/embed/FzA90Her2AU?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`,
-  `<iframe
-    width="80%"
-    height="100%"
-    src="https://www.youtube.com/embed/5bmZaF56xfM?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`,
-  `<iframe
-    width="80%"
-    height="100%"
-    src="https://www.youtube.com/embed/Z64JhAqwRfE?controls=0?theme=dark&amp;autoplay=0&amp;autohide=0&amp;cc_load_policy=1&amp;modestbranding=1&amp;fs=0&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;mute=0&amp;loop=1&amp;"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`,
-];
-
-//////////////////////////////////////////////////////
-
+////////////////////////////
+/// 스크롤에 반응하여 등장 //
+/////////////////////////////
 const slidePosistion = [];
 // 위치값 저장할 변수
 
 const winHeight = (window.innerHeight / 3) * 2;
 // 화면 높이값 기준 등장액션 위치 보정변수
 
-function search() {
-  // console.log("clicked");
-
-  const target = document.querySelector(".sns > li:last-child");
-  target.classList.toggle("on");
-}
-
-const gnb = document.querySelector("nav.gnb");
-let lastScrollY = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  if (lastScrollY < window.scrollY) {
-    // console.log(lastScrollY);
-    // console.log("we are going down");
-    gnb.classList.add("nav--hidden");
-  } else {
-    // console.log("we are going up");
-    gnb.classList.remove("nav--hidden");
-  }
-
-  lastScrollY = window.scrollY;
-});
-////////////////////////////
-/// 스크롤에 반응하여 등장 //
-/////////////////////////////
 function slideDown(n) {
   // console.log("slideDown");
 
@@ -196,7 +113,7 @@ function loadFn() {
       // 위 버튼 / 아래 버튼 분기하기
       if (!isUp) {
         //  1. 슬라이드 top : -220px
-        slide.style.top = "-220px";
+        slide.style.top = "-17.1vh";
         slide.style.transition = "top 1s ease-in-out";
         // 이동후 실행 -> 이동시간은 1초
         setTimeout(() => {
@@ -220,7 +137,7 @@ function loadFn() {
         //
         slide.insertBefore(lis[lis.length - 1], lis[0]);
         //  2. 동시에 슬라이드 top : -220px
-        slide.style.top = "-220px";
+        slide.style.top = "-17.1vh";
         slide.style.transition = "none";
         // 위의 이동소스와 약간의 시차필요
         setTimeout(() => {
@@ -365,12 +282,44 @@ document.documentElement.style.setProperty("--data-length2_2", textLen4WPx);
 /////////////////////// audio player 등장 //////////////////////////
 const audioBtn = document.querySelector(".fbx");
 const audioController = document.querySelector("audio");
+let isPlaying = false;
+audioBtn.addEventListener("click", function () {
+  if (isPlaying) {
+    audioController.pause();
+    audioController.removeAttribute("controls");
+  } else {
+    audioController.play();
+    audioController.setAttribute("controls", "controls");
+  }
 
-audioBtn.addEventListener("click", function (e) {
-  audioController.play();
-  audioController.setAttribute("controls", "true");
+  // isPlaying ? audioController.pause() : audioController.play();
+  // audioController.setAttribute("controls", "controls");
+  // audioController.setAttribute("controls", "true");
 });
+
+audioController.onplaying = function () {
+  isPlaying = true;
+};
+audioController.onpause = function () {
+  isPlaying = false;
+};
+
 // console.log(audioBtn);
+
+// const myAudio = document.getElementById("myAudio");
+// let isPlaying = false;
+
+// function togglePlay() {
+//   isPlaying ? myAudio.pause() : myAudio.play();
+// };
+
+// myAudio.onplaying = function() {
+//   isPlaying = true;
+// };
+// myAudio.onpause = function() {
+//   isPlaying = false;
+// };
+
 /////////////////////// video list 등장 /////////////////////////
 
 const moreBtn = document.getElementById("moreBtn");
@@ -559,6 +508,4 @@ ianBtn.onclick = () => {
   }, 800);
 };
 
-//////////////// 작가 사진 바꾸기 /////////////////
-// const authorPicture = document.querySelectorAll('')
-///////////////////////////////////////////////////
+/////////////////////예매 - 티켓 선택하기 //////////////////////

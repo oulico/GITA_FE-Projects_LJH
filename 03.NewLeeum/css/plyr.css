@@ -202,6 +202,7 @@ a.plyr__control::before {
   display: flex;
   justify-content: flex-end;
   text-align: center;
+  margin-bottom: 0%;
 }
 .plyr__controls .plyr__progress__container {
   flex: 1;
@@ -1621,7 +1622,7 @@ button.plyr__control.plyr__control--overlaid {
   border: solid 7px whitesmoke;
 }
 .plyr__controls {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 .plyr__control svg {
   width: 36px;
