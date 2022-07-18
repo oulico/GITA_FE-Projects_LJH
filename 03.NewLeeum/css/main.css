@@ -550,13 +550,13 @@ section#sec4 {
 }
 .section-4 .preventClick {
   position: absolute;
-
+  filter: blur(12px);
   top: 0;
   left: 0;
+  background-color: transparent;
   height: 100%;
   width: 100%;
-  background-color: black;
-  opacity: 0;
+  opacity: 1;
   display: none;
   z-index: 9999999999995;
 }
