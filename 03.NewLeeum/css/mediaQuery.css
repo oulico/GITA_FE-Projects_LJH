@@ -5,8 +5,14 @@
   body h6.ticketTitle {
     font-size: 1rem;
   }
-
-  section {
+  body .curtain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  body .curtain h1 {
+    font-size: 15vw;
   }
   .gnb ul {
     display: flex;
