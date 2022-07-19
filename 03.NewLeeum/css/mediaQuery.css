@@ -110,10 +110,10 @@
   }
 
   body section#sec4 {
-    height: 2770px;
-    margin: 5vh 0 5vh;
+    height: 2570px;
+    margin: 0vh 0 5vh;
     position: relative;
-    padding-top: 631px;
+    padding-top: 0;
   }
   :root .cont__card__img.card-pos-absolute {
     opacity: 0;
@@ -587,5 +587,35 @@
   }
   .top li#searchBar {
     display: none;
+  }
+  body .btn:after {
+    font-size: 1.5rem;
+  }
+  body #cont2 * {
+    /* outline: red solid 1px; */
+    box-sizing: border-box;
+    padding: 3px;
+  }
+
+  body .ticket.card1 {
+    width: 100%;
+    margin: 0 auto;
+  }
+  html .contMembers#cont {
+    width: auto;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  :root .membership b {
+    font-size: 40px;
+  }
+  :root .membership h4 {
+    font-size: 24px;
+  }
+  :root .membership h5 {
+    font-size: 16px;
+  }
+  :root .membership span {
+    font-size: 16px;
   }
 }

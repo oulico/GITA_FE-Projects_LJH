@@ -1,6 +1,11 @@
 @import url(./common.css);
 @import url(./core.css);
 @import url(./reset.css);
+@import url(./mediaQuery.css);
+
+/* 아이콘 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css");
 
 #cont {
   width: max(450px);
@@ -42,11 +47,12 @@
 .membership li {
   border-bottom: 1px solid black;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0.5rem 0 0.5rem 0;
 }
 .membership input {
-  width: max(380px);
+  margin-left: 10px;
+  width: max(158px);
 }
 
 .membership .findId {

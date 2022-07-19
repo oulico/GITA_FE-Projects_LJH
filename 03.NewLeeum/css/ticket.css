@@ -3,6 +3,10 @@
 @import url(../css/reset.css);
 @import url(../css/mediaQuery.css);
 
+/* 아이콘 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css");
+
 :root {
   font-size: 22px;
 }
