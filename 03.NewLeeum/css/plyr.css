@@ -1636,7 +1636,7 @@ button.plyr__control.plyr__control--overlaid {
 
   /* text-align: center; */
 }
-#player2 button.plyr__control.plyr__control--overlaid {
+.authorVideoScreen button.plyr__control.plyr__control--overlaid {
   /* background: red; */
   width: 113px;
   height: 113px;
@@ -1657,7 +1657,7 @@ button.plyr__control.plyr__control--overlaid::before {
   -webkit-animation: spinX 6s linear infinite;
   animation: spinX 6s linear infinite;
 }
-#player2 button.plyr__control.plyr__control--overlaid::before {
+.authorVideoScreen button.plyr__control.plyr__control--overlaid::before {
   position: absolute;
   width: 100px;
   height: 100px;

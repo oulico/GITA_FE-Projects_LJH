@@ -372,6 +372,7 @@ section#sec4 {
   margin: 5vh 0 5vh;
   position: relative;
 }
+
 .section-4__heading {
   padding: 6vw 6vw 0vw 6vw;
 }
@@ -398,6 +399,7 @@ section#sec4 {
   transform: translateX(-50%);
   position: absolute;
 }
+
 /* 
 .section-4 {
   clear: both;
@@ -648,7 +650,9 @@ section#sec4 {
   width: 100vw;
   position: absolute;
 }
-
+.section-5 * {
+  cursor: url(../img/svg/64px-Icon_Information.svg.png), pointer;
+}
 .section-5 {
   box-shadow: inset 0 30px 30px -30px black;
   cursor: url(../img/svg/64px-Icon_Information.svg.png), pointer;
@@ -659,6 +663,11 @@ section#sec4 {
   overflow-x: hidden;
   overflow-y: hidden;
   padding-right: 10vw;
+}
+@keyframes swipeNext {
+  100% {
+    opacity: 1;
+  }
 }
 
 .section-5_bg {

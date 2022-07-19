@@ -3,8 +3,13 @@
 @import url(../css/reset.css);
 @import url(../css/mediaQuery.css);
 
+:root {
+  font-size: 22px;
+}
+
 .ibx2 {
-  /* width: 450px; */
+  width: 1000px;
+  margin: 0 auto;
   height: 600px;
   margin-top: calc(var(--nav-height) * 3);
   display: flex;
@@ -24,8 +29,7 @@
 }
 
 #cont2 {
-  width: 1200px;
-  margin: 0 auto;
+  /* width: 1200px; */
 }
 
 .exhibitCard1 {
@@ -68,11 +72,13 @@
   margin-bottom: 10px;
 }
 .ticket > h6 {
-  margin: 0;
+  font-size: 1.4rem;
+
   padding: 0;
+  margin-top: 0.5rem;
 }
-span {
-  font-size: 0.5rem;
+.ticket span {
+  font-size: 0.8rem;
 }
 
 .price {
@@ -89,12 +95,13 @@ span {
   vertical-align: bottom;
 }
 .selectBtn {
+  display: flex;
   border: solid white 1px;
   width: 70px;
-  text-align: center;
   height: 30px;
-  line-height: 15px;
   float: right;
+  justify-content: center;
+  align-items: center;
 }
 .selectBtn,
 .selectBtn * {
@@ -115,14 +122,17 @@ span {
   color: black;
 }
 .confirmBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   background-color: white;
   margin-top: 30px;
   border: black solid 2px;
   width: 300px;
-  line-height: 0px;
+
   height: 70px;
-  text-align: center;
+
   border-radius: 7px;
 }
 

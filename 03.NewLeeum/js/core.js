@@ -19,4 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     lastScrollY = window.scrollY;
   });
+
+  gnb.addEventListener("click", () => {
+    gnb.classList.toggle("mobileOn");
+  });
 });

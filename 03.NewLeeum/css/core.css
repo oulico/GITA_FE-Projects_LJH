@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* 웹폰트 */
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Oswald:wght@200;400;700&display=swap");
-
+@import url(./mediaQuery.css);
 /*
 타이틀
  font-family: 'Oswald', sans-serif; */
@@ -83,12 +83,21 @@ input:focus {
 /* 검색 버튼 클릭시 인풋창 등장 */
 
 html .sns > li:last-child {
+  position: relative;
   width: 150px;
-  height: 15px;
-  vertical-align: middle;
+  height: 26px;
+  vertical-align: bottom;
   border-bottom: 2px solid var(--color-black);
   transition: width 0.4s ease-in-out;
   overflow: hidden;
+}
+input[type="text"] {
+  width: 100%;
+  height: 90%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: transparent;
 }
 
 html .sns > li:last-child.on {
@@ -167,8 +176,11 @@ html .sns > li:last-child.on {
     sans-serif;
   font-size: 24px;
   margin-bottom: 25px;
-  text-align: center;
-  line-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  /* line-height: 80px; */
   color: whitesmoke;
   font-size: 30px;
   content: "예매하기";
@@ -188,12 +200,6 @@ html .sns > li:last-child.on {
   left: 0px;
 }
 
-@media (min-width: 768px) {
-  .btn {
-    padding: 13px 50px 13px;
-  }
-}
-
 body {
   padding-top: var(--nav-height);
 }
@@ -211,6 +217,7 @@ nav.gnb {
   width: 100%;
   box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.412);
   outline: 2px solid black;
+  font-size: auto;
 }
 
 .nav--hidden {
