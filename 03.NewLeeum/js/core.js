@@ -20,7 +20,12 @@ window.addEventListener("DOMContentLoaded", () => {
     lastScrollY = window.scrollY;
   });
 
-  gnb.addEventListener("click", () => {
+  const ellipseBtn = document.querySelector(".ellipse");
+  console.log(`ellipseBtn: `, ellipseBtn);
+
+  ellipseBtn.addEventListener("click", () => {
+    // gnb.classList.toggle("mobileOn");
+    console.log(`clickckckckcsa;lkjf`);
     gnb.classList.toggle("mobileOn");
   });
 });

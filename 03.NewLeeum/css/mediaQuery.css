@@ -323,12 +323,12 @@
     z-index: 999998;
     background-color: rgb(243, 243, 243);
     position: fixed;
-    top: -373px;
+    top: -450px;
     transition: transform 0.2s ease-in-out;
     width: 100%;
     box-shadow: 1px 1px 24px rgb(0 0 0 / 41%);
     outline: 2px solid black;
-    height: 475px;
+    height: 555px;
     transition: top 0.4s ease-in-out;
   }
   .gnb ul {
@@ -351,7 +351,7 @@
     font-size: 40px;
   }
 
-  nav.gnb::after {
+  .ellipse::after {
     padding: 0;
     margin: 0;
     display: block;
@@ -557,5 +557,35 @@
     overflow-x: scroll;
     margin-top: 390px;
     height: 700px;
+  }
+  body #searchBlank {
+    display: none;
+  }
+  body .searchBarMobile {
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body .searchContainer {
+    width: 90%;
+    background-color: white;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .searchBarMobile input {
+    width: 70%;
+    height: 28px;
+    margin-left: 20px;
+    background-color: transparent;
+  }
+  .top li#searchBar {
+    display: none;
   }
 }
