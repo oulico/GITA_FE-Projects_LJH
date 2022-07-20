@@ -807,6 +807,7 @@ span#moreBtn {
   flex-wrap: wrap;
 }
 .revealVideos {
+  width: 100%;
   height: 500px;
   overflow: hidden;
   position: absolute;

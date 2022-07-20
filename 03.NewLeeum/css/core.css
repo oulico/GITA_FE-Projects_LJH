@@ -92,6 +92,7 @@ html .sns > li:last-child {
   overflow: hidden;
 }
 .searchBlank input[type="text"] {
+  position: absolute;
   width: 100%;
   height: 90%;
   top: 0;
@@ -229,10 +230,4 @@ nav.gnb {
 /* 모바일 모드 검색창  */
 .searchBarMobile {
   display: none;
-}
-.searchBlank input[type="text"] {
-  position: absolute;
-  height: 23px;
-  top: 0;
-  background: transparent;
 }
