@@ -309,8 +309,8 @@ if (window.innerWidth > 992) {
     },
     400
   );
+  let culDeSac = container.scrollWidth - container.clientWidth;
 }
-let culDeSac = container.scrollWidth - container.clientWidth;
 
 // console.log("마지막위치", culDeSac);
 
