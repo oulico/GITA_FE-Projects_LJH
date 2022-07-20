@@ -1,3 +1,10 @@
+// console.log(`offsetMob`, window.innerWidth);
+if (window.innerWidth < 600) {
+  const tg = document.querySelector("#slide");
+  tg.classList.remove("desktop");
+  tg.classList.add("mobile");
+}
+
 ////////////////////////////
 
 /// 스크롤에 반응하여 등장 //
@@ -87,7 +94,7 @@ function loadFn() {
   // console.log("로딩완료");
 
   // 2. 변경대상
-  const slide = document.querySelector("#slide");
+  const slide = document.querySelector(".desktop#slide");
   // console.log("슬라이드:", slide);
 
   // 3. 이동버튼에 클릭이벤트 설정
@@ -114,6 +121,7 @@ function loadFn() {
       // 위 버튼 / 아래 버튼 분기하기
       if (!isUp) {
         //  1. 슬라이드 top : -220px
+        // slide.style.top = "-17.1vh";
         slide.style.top = "-17.1vh";
         slide.style.transition = "top 1s ease-in-out";
         // 이동후 실행 -> 이동시간은 1초
@@ -150,6 +158,72 @@ function loadFn() {
       } //////else/////
     }; // click //
   } // for of //
+
+  // 2. 변경대상
+  const slideMob = document.querySelector(".mobile#slide");
+  // console.log("슬라이드:", slide);
+
+  // 3. 이동버튼에 클릭이벤트 설정
+  // 이동버튼요소
+  const slideBtnMob = document.querySelectorAll(".section-4__chevron");
+  // console.log("이동버튼:", slideBtn);
+
+  // 광클 금지용 변수
+  let clickDisabledMob = 0; // 0 : 허용 1 : 금지
+
+  // 버튼개수만큼 for of로 클릭이벤트 설정
+  for (let x of slideBtnMob) {
+    x.onclick = () => {
+      ////// 광클 금지 ///////
+      if (clickDisabledMob) return;
+      clickDisabledMob = 1;
+      setTimeout(() => (clickDisabledMob = 0), 1010);
+      ////////////////////////
+
+      // 위 버튼 여부 확인
+      let isUp = x.classList.contains("upBtn");
+      console.log(".upBtn인가?: ", isUp);
+
+      // 위 버튼 / 아래 버튼 분기하기
+      if (!isUp) {
+        //  1. 슬라이드 top : -220px
+        // slide.style.top = "-17.1vh";
+        slideMob.style.top = "-50%";
+        slideMob.style.transition = "top 1s ease-in-out";
+        // 이동후 실행 -> 이동시간은 1초
+        setTimeout(() => {
+          // 2. 첫번째 li를 맨뒤로 이동
+          // 첫번째 li
+          let firstLi = slideMob.querySelectorAll("li")[0];
+          // 맨뒤로 이동
+          slideMob.appendChild(firstLi);
+          // 3. 동시에 top값을 0으로
+          slideMob.style.top = "0";
+          // 트랜지션 해제
+          slideMob.style.transition = "none";
+        }, 1000); //////// Timeout ////////
+
+        // 위 버튼 //
+      } ////// if ///////
+      else {
+        // 맨뒤 li 맨앞으로 이동
+        // li 들
+        let lis = slideMob.querySelectorAll("li");
+        //
+        slideMob.insertBefore(lis[lis.length - 1], lis[0]);
+        //  2. 동시에 슬라이드 top : -220px
+        slideMob.style.top = "-50%";
+        slideMob.style.transition = "none";
+        // 위의 이동소스와 약간의 시차필요
+        setTimeout(() => {
+          // 3. top:0 + 트랜지션
+          slideMob.style.top = "0";
+          slideMob.style.transition = "top 1s ease-in-out";
+          // 아래 버튼 //
+        }, 10); ///// Timeout ////////
+      } //////else/////
+    }; // click //
+  } // for of //
 }
 loadFn();
 
@@ -174,67 +248,68 @@ function opacity1(id) {
 
 /////////////// 가로스크롤하기 //////////////
 
-const container = document.getElementById("sec5");
-// where "container" is the id of the container
-let isCulDeSac;
+if (window.innerWidth > 992) {
+  const container = document.getElementById("sec5");
+  // where "container" is the id of the container
+  let isCulDeSac;
 
-let totalOffsetTop = window.scrollY;
-let eleOffsetTop = slidePosistion[2];
+  let totalOffsetTop = window.scrollY;
+  let eleOffsetTop = slidePosistion[2];
 
-const scrollPreventLayer = document.querySelector(".section-5_bg");
+  const scrollPreventLayer = document.querySelector(".section-5_bg");
 
-container.onmouseenter = function () {
-  if (totalOffsetTop !== eleOffsetTop) {
-    // scrollPreventLayer.classList.add("stop-scrolling");
-    // console.log(scrollPreventLayer);
-    // 스크롤 가로모드로 전환되는 동안 스크롤 방지 시작
-    container.addEventListener("wheel", function (e) {
-      e.preventDefault();
-    });
-    window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
-  }
-};
-container.onmouseover = function () {
-  if (totalOffsetTop !== eleOffsetTop) {
-    window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
-  }
-};
-
-container.addEventListener(
-  "wheel",
-  function (e) {
-    // scrollPreventLayer.classList.remove("stop-scrolling");
-    // 스크롤 방지 해제
-    setTimeout(() => {
-      if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
-        console.log("tail cul de sac");
-        container.onmouseover = function (e) {
-          e.preventDefault();
-        };
-        window.scrollTo({ top: slidePosistion[3], behavior: "smooth" });
-        //스크롤이 오른쪽 끝에 닿으면 다음 섹션으로 이동시키기
-      } else if (e.deltaY < 0 && container.scrollLeft === 0) {
-        // console.log("head cul de sac");
-        container.onmouseover = function (e) {
-          e.preventDefault();
-        };
-        window.scrollTo({ top: slidePosistion[1], behavior: "smooth" });
-        isCulDeSac = container.scrollLeft;
-        //스크롤이 왼쪽 끝에 닿으면 이전 섹션으로 이동시키기
-      } else if (e.deltaY > 0) {
-        container.scrollLeft += 20;
+  container.onmouseenter = function () {
+    if (totalOffsetTop !== eleOffsetTop) {
+      // scrollPreventLayer.classList.add("stop-scrolling");
+      // console.log(scrollPreventLayer);
+      // 스크롤 가로모드로 전환되는 동안 스크롤 방지 시작
+      container.addEventListener("wheel", function (e) {
         e.preventDefault();
+      });
+      window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
+    }
+  };
+  container.onmouseover = function () {
+    if (totalOffsetTop !== eleOffsetTop) {
+      window.scrollTo({ top: slidePosistion[2], behavior: "smooth" });
+    }
+  };
 
-        // prevenDefault() 로 세로 스크롤을 막을 수 있다
-      } else if (e.deltaY <= 0) {
-        container.scrollLeft -= 20;
-        e.preventDefault();
-      }
-    });
-  },
-  400
-);
+  container.addEventListener(
+    "wheel",
+    function (e) {
+      // scrollPreventLayer.classList.remove("stop-scrolling");
+      // 스크롤 방지 해제
+      setTimeout(() => {
+        if (e.deltaY > 0 && parseInt(container.scrollLeft) === culDeSac) {
+          console.log("tail cul de sac");
+          container.onmouseover = function (e) {
+            e.preventDefault();
+          };
+          window.scrollTo({ top: slidePosistion[3], behavior: "smooth" });
+          //스크롤이 오른쪽 끝에 닿으면 다음 섹션으로 이동시키기
+        } else if (e.deltaY < 0 && container.scrollLeft === 0) {
+          // console.log("head cul de sac");
+          container.onmouseover = function (e) {
+            e.preventDefault();
+          };
+          window.scrollTo({ top: slidePosistion[1], behavior: "smooth" });
+          isCulDeSac = container.scrollLeft;
+          //스크롤이 왼쪽 끝에 닿으면 이전 섹션으로 이동시키기
+        } else if (e.deltaY > 0) {
+          container.scrollLeft += 20;
+          e.preventDefault();
 
+          // prevenDefault() 로 세로 스크롤을 막을 수 있다
+        } else if (e.deltaY <= 0) {
+          container.scrollLeft -= 20;
+          e.preventDefault();
+        }
+      });
+    },
+    400
+  );
+}
 let culDeSac = container.scrollWidth - container.clientWidth;
 
 // console.log("마지막위치", culDeSac);
